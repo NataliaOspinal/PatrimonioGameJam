@@ -8,7 +8,7 @@ public class ClickManager : MonoBehaviour
     public Transform player;
 
     // Límites de movimiento del jugador
-    public float minY = -5.0f;
+    public float minY = -4.0f;
     public float maxY = -1.0f;
     public float minX = -8.0f;
     public float maxX = 8.0f;
