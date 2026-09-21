@@ -1,0 +1,888 @@
+fileFormatVersion: 2
+guid: 0378893bdd0ae6943947489aaad23a16
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: b2a9591990af98743ba3ff7cf1000886, type: 3}
+  textureImporterSettings:
+    alphaSource: 1
+    mipMapMode: 0
+    enableMipMap: 1
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+    convertToNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+    swizzle: 50462976
+    isReadable: 0
+    streamingMipmaps: 0
+    streamingMipmapsPriority: 0
+    vTOnly: 0
+    ignoreMipmapLimit: 0
+    nPOTScale: 1
+    sRGBTexture: 1
+    spriteMode: 2
+    spriteExtrude: 1
+    spriteMeshType: 1
+    alignment: 0
+    spritePivot: {x: 0.5, y: 0.5}
+    spritePixelsToUnits: 100
+    spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+    spriteGenerateFallbackPhysicsShape: 0
+    generateCubemap: 6
+    cubemapConvolution: 0
+    seamlessCubemap: 0
+    alphaIsTransparency: 1
+    spriteTessellationDetail: -1
+    textureType: 8
+    textureShape: 1
+    singleChannelComponent: 0
+    flipbookRows: 0
+    flipbookColumns: 0
+    ignorePngGamma: 0
+    cookieMode: 0
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 0
+    wrapV: 0
+    wrapW: 0
+    normalMap: 0
+    textureFormat: 0
+    maxTextureSize: 0
+    lightmap: 0
+    compressionQuality: 0
+    linearTexture: 0
+    grayScaleToAlpha: 0
+    rGBM: 0
+    cubemapConvolutionSteps: 0
+    cubemapConvolutionExponent: 0
+    maxTextureSizeSet: 0
+    compressionQualitySet: 0
+    textureFormatSet: 0
+    applyGammaDecoding: 0
+  singleSpriteImportData:
+  - name: 
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    spriteID: 245f6893685218c41a6179b11d5ce53b
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 0, y: 0}
+    spritePosition: {x: 0, y: 0}
+  multiSpriteImportData: []
+  layeredSpriteImportData:
+  - name: ojos cerrados
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 1790
+      y: 295
+      width: 212
+      height: 50
+    spriteID: a5f7a9dc6c0e859438a3e9fa4c83a597
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1790, y: 295}
+    spritePosition: {x: 980, y: 1911}
+  - name: ojos abiertos
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 1790
+      y: 673
+      width: 212
+      height: 50
+    spriteID: 1334b48c4f9f8174a905f52fe7be6967
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1790, y: 673}
+    spritePosition: {x: 980, y: 1911}
+  - name: boca abierta
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 1623
+      y: 1057
+      width: 163
+      height: 83
+    spriteID: df36810c62faf714e893ebbe8561ab1c
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1623, y: 1057}
+    spritePosition: {x: 1001, y: 1760}
+  - name: boca cerrada
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 1794
+      y: 1057
+      width: 163
+      height: 62
+    spriteID: e2c43bf2b8cec8f45890fc214037621b
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1794, y: 1057}
+    spritePosition: {x: 1001, y: 1781}
+  - name: nariz y cejas
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 485
+      y: 1114
+      width: 232
+      height: 263
+    spriteID: e1a2afaf45753be43b450528361a3300
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 485, y: 1114}
+    spritePosition: {x: 970, y: 1741}
+  - name: cabeza 3
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 1129
+      y: 760
+      width: 486
+      height: 436
+    spriteID: aa939234df627204abed79cf08116fed
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1129, y: 760}
+    spritePosition: {x: 851, y: 1718}
+  - name: cabeza 2
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 1129
+      y: 1624
+      width: 440
+      height: 416
+    spriteID: a34d159aaf5972540b0ff46b399b0604
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1129, y: 1624}
+    spritePosition: {x: 869, y: 1737}
+  - name: cabeza 1
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 1452
+      width: 437
+      height: 446
+    spriteID: 010e73b8f8a1eaf4a9352f9fe42c31dd
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 1452}
+    spritePosition: {x: 874, y: 1736}
+  - name: pecho fem
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 1129
+      y: 1204
+      width: 492
+      height: 412
+    spriteID: 084f04ab7af72404386f7f32bc5dcf7c
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1129, y: 1204}
+    spritePosition: {x: 839, y: 1361}
+  - name: pecho masc
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4
+      width: 473
+      height: 812
+    spriteID: b9932e3edcf60a847bfe2d8d74a49700
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 4}
+    spritePosition: {x: 853, y: 1357}
+  - name: manga corta
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 1790
+      y: 4
+      width: 221
+      height: 283
+    spriteID: 16cb9e4ec2a547d4899218cd5ab6bb4a
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1790, y: 4}
+    spritePosition: {x: 704, y: 1451}
+  - name: manga larga
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 485
+      y: 817
+      width: 367
+      height: 289
+    spriteID: 334a9069f68114c489b2f449e0f5b461
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 485, y: 817}
+    spritePosition: {x: 552, y: 1439}
+  - name: brazo desnudo
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 1129
+      y: 4
+      width: 653
+      height: 370
+    spriteID: c94390631c8a80f49b89d12fab2dd8e4
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1129, y: 4}
+    spritePosition: {x: 261, y: 1360}
+  - name: manga corta - copia
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 1790
+      y: 382
+      width: 221
+      height: 283
+    spriteID: 95c18735278fff64c926656dcf185591
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1790, y: 382}
+    spritePosition: {x: 1247, y: 1451}
+  - name: manga larga
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 1623
+      y: 760
+      width: 381
+      height: 289
+    spriteID: 975025787691cb541ba784864d534e8d
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1623, y: 760}
+    spritePosition: {x: 1259, y: 1439}
+  - name: brazo desnudo - copia
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 1129
+      y: 382
+      width: 653
+      height: 370
+    spriteID: b697216016286d840b25bfff8e15ab4c
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1129, y: 382}
+    spritePosition: {x: 1259, y: 1360}
+  - name: cinturon
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 1906
+      width: 451
+      height: 110
+    spriteID: 6ac69a1fe8a026c45b5c9500bad51e7b
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 1906}
+    spritePosition: {x: 871, y: 1283}
+  - name: falda larga
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 485
+      y: 4
+      width: 636
+      height: 491
+    spriteID: 7bf1f6ab50f57624daf2a5fe23773c4b
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 485, y: 4}
+    spritePosition: {x: 772, y: 811}
+  - name: falda corta
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 485
+      y: 503
+      width: 587
+      height: 306
+    spriteID: 83a70062df52b2a4da7646287aea943f
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 485, y: 503}
+    spritePosition: {x: 800, y: 995}
+  - name: pierna derecha  - copia
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 1629
+      y: 1204
+      width: 321
+      height: 620
+    spriteID: a0f3824b9e154c94e8852eb1186ac13c
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1629, y: 1204}
+    spritePosition: {x: 743, y: 641}
+  - name: 'pierna derecha '
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 824
+      width: 321
+      height: 620
+    spriteID: 11681c9cac771a54b828c06bfa43c303
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 824}
+    spritePosition: {x: 1121, y: 641}
+  spriteImportData: []
+  rigSpriteImportData: []
+  sharedRigSpriteImportData: []
+  mosaicSpriteImportData: []
+  sharedRigCharacterData:
+    bones: []
+    parts: []
+    dimension: {x: 0, y: 0}
+    characterGroups: []
+    pivot: {x: 0, y: 0}
+    boneReadOnly: 0
+  characterData:
+    bones: []
+    parts: []
+    dimension: {x: 0, y: 0}
+    characterGroups: []
+    pivot: {x: 0, y: 0}
+    boneReadOnly: 0
+  platformSettings: []
+  mosaicLayers: 1
+  characterMode: 1
+  documentPivot: {x: 0, y: 0}
+  documentAlignment: 7
+  importHiddenLayers: 0
+  layerMappingOption: 2
+  generatePhysicsShape: 0
+  paperDollMode: 0
+  keepDupilcateSpriteName: 1
+  generateTileAssets: 0
+  tilePaletteCellLayout: 0
+  tilePaletteHexagonLayout: 0
+  tilePaletteCellSize: {x: 1, y: 1, z: 0}
+  tilePaletteCellSizing: 0
+  transparencySortMode: 0
+  transparencySortAxis: {x: 0, y: 0, z: 1}
+  tileTemplate: {instanceID: 0}
+  padding: 4
+  spriteSizeExpand: 0
+  skeletonAssetReferenceID: 
+  pipeline: {instanceID: 0}
+  pipelineVersion: 
+  spriteCategoryList:
+    categories: []
+  spritePackingTag: 
+  resliceFromLayer: 0
+  pSDLayerImportSetting: []
+  psdLayers:
+  - name: rostro
+    spriteName: 
+    isGroup: 1
+    parentIndex: -1
+    spriteID: ab2fbed0f08ac2c49a4b647ab992adaa
+    layerID: 0
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: ojos cerrados
+    spriteName: ojos cerrados
+    isGroup: 0
+    parentIndex: 0
+    spriteID: a5f7a9dc6c0e859438a3e9fa4c83a597
+    layerID: -452511500
+    mosaicPosition: {x: 1790, y: 295}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: ojos abiertos
+    spriteName: ojos abiertos
+    isGroup: 0
+    parentIndex: 0
+    spriteID: 1334b48c4f9f8174a905f52fe7be6967
+    layerID: 413107154
+    mosaicPosition: {x: 1790, y: 673}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: boca abierta
+    spriteName: boca abierta
+    isGroup: 0
+    parentIndex: 0
+    spriteID: df36810c62faf714e893ebbe8561ab1c
+    layerID: -1038669305
+    mosaicPosition: {x: 1623, y: 1057}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: boca cerrada
+    spriteName: boca cerrada
+    isGroup: 0
+    parentIndex: 0
+    spriteID: e2c43bf2b8cec8f45890fc214037621b
+    layerID: -1434897991
+    mosaicPosition: {x: 1794, y: 1057}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: nariz y cejas
+    spriteName: nariz y cejas
+    isGroup: 0
+    parentIndex: 0
+    spriteID: e1a2afaf45753be43b450528361a3300
+    layerID: -433699155
+    mosaicPosition: {x: 485, y: 1114}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: cabeza
+    spriteName: 
+    isGroup: 1
+    parentIndex: -1
+    spriteID: 4fa51c4dae46cb7428599509b725df4d
+    layerID: -619351618
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: cabeza 3
+    spriteName: cabeza 3
+    isGroup: 0
+    parentIndex: 6
+    spriteID: aa939234df627204abed79cf08116fed
+    layerID: -2142988931
+    mosaicPosition: {x: 1129, y: 760}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: cabeza 2
+    spriteName: cabeza 2
+    isGroup: 0
+    parentIndex: 6
+    spriteID: a34d159aaf5972540b0ff46b399b0604
+    layerID: 585894424
+    mosaicPosition: {x: 1129, y: 1624}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: cabeza 1
+    spriteName: cabeza 1
+    isGroup: 0
+    parentIndex: 6
+    spriteID: 010e73b8f8a1eaf4a9352f9fe42c31dd
+    layerID: -980189517
+    mosaicPosition: {x: 4, y: 1452}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: pecho
+    spriteName: 
+    isGroup: 1
+    parentIndex: -1
+    spriteID: 8e7a907b665d15b40bd06de47a1a25ee
+    layerID: 1998188033
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: pecho fem
+    spriteName: pecho fem
+    isGroup: 0
+    parentIndex: 10
+    spriteID: 084f04ab7af72404386f7f32bc5dcf7c
+    layerID: 1811770739
+    mosaicPosition: {x: 1129, y: 1204}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: pecho masc
+    spriteName: pecho masc
+    isGroup: 0
+    parentIndex: 10
+    spriteID: b9932e3edcf60a847bfe2d8d74a49700
+    layerID: -1028666087
+    mosaicPosition: {x: 4, y: 4}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: brazo izq
+    spriteName: 
+    isGroup: 1
+    parentIndex: -1
+    spriteID: 2a4792f2fda661e40a308d34c018d3c5
+    layerID: 1475307684
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: manga corta
+    spriteName: manga corta
+    isGroup: 0
+    parentIndex: 13
+    spriteID: 16cb9e4ec2a547d4899218cd5ab6bb4a
+    layerID: 712584015
+    mosaicPosition: {x: 1790, y: 4}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: manga larga
+    spriteName: manga larga
+    isGroup: 0
+    parentIndex: 13
+    spriteID: 334a9069f68114c489b2f449e0f5b461
+    layerID: 981355409
+    mosaicPosition: {x: 485, y: 817}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: brazo desnudo
+    spriteName: brazo desnudo
+    isGroup: 0
+    parentIndex: 13
+    spriteID: c94390631c8a80f49b89d12fab2dd8e4
+    layerID: 422065230
+    mosaicPosition: {x: 1129, y: 4}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: brazo der
+    spriteName: 
+    isGroup: 1
+    parentIndex: -1
+    spriteID: e87ce735f388fd54689e6b1fd2e4dde9
+    layerID: -541114329
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: manga corta - copia
+    spriteName: manga corta - copia
+    isGroup: 0
+    parentIndex: 17
+    spriteID: 95c18735278fff64c926656dcf185591
+    layerID: 1949024798
+    mosaicPosition: {x: 1790, y: 382}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: manga larga
+    spriteName: manga larga
+    isGroup: 0
+    parentIndex: 17
+    spriteID: 975025787691cb541ba784864d534e8d
+    layerID: -597142581
+    mosaicPosition: {x: 1623, y: 760}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: brazo desnudo - copia
+    spriteName: brazo desnudo - copia
+    isGroup: 0
+    parentIndex: 17
+    spriteID: b697216016286d840b25bfff8e15ab4c
+    layerID: 16791023
+    mosaicPosition: {x: 1129, y: 382}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: cinturon
+    spriteName: cinturon
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 6ac69a1fe8a026c45b5c9500bad51e7b
+    layerID: 1462247494
+    mosaicPosition: {x: 4, y: 1906}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: falda
+    spriteName: 
+    isGroup: 1
+    parentIndex: -1
+    spriteID: 6d397094fa78cc54fbea7afa8b65bfc8
+    layerID: 949684974
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: falda larga
+    spriteName: falda larga
+    isGroup: 0
+    parentIndex: 22
+    spriteID: 7bf1f6ab50f57624daf2a5fe23773c4b
+    layerID: -1951294609
+    mosaicPosition: {x: 485, y: 4}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: falda corta
+    spriteName: falda corta
+    isGroup: 0
+    parentIndex: 22
+    spriteID: 83a70062df52b2a4da7646287aea943f
+    layerID: -492601211
+    mosaicPosition: {x: 485, y: 503}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: pierna derecha  - copia
+    spriteName: pierna derecha  - copia
+    isGroup: 0
+    parentIndex: -1
+    spriteID: a0f3824b9e154c94e8852eb1186ac13c
+    layerID: -1386709462
+    mosaicPosition: {x: 1629, y: 1204}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: 'pierna derecha '
+    spriteName: 'pierna derecha '
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 11681c9cac771a54b828c06bfa43c303
+    layerID: -1064574739
+    mosaicPosition: {x: 4, y: 824}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  mosaicPSDLayers: []
+  rigPSDLayers: []
+  sharedRigPSDLayers: []
+  importFileNodeState: 1
+  platformSettingsDirtyTick: 0
+  spriteSizeExpandChanged: 0
+  generateGOHierarchy: 0
+  textureAssetName: 
+  prefabAssetName: 
+  spriteLibAssetName: 
+  skeletonAssetName: 
+  secondarySpriteTextures: []
