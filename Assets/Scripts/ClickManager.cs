@@ -7,11 +7,8 @@ public class ClickManager : MonoBehaviour
     float moveSpeed = 3.5f, moveAccuracy = 0.15f;
     public Transform player;
 
-    // LÌmites de movimiento del jugador
-    public float minY = -4.0f;
-    public float maxY = -1.0f;
-    public float minX = -8.0f;
-    public float maxX = 8.0f;
+    [Header("√Årea Caminable de la Sala Actual")]
+    public Collider2D walkableArea; 
 
     void Update()
     {
@@ -33,17 +30,17 @@ public class ClickManager : MonoBehaviour
         }
     }
 
-    // Camina libremente respetando los lÌmites
     private void WalkToPoint(Vector2 targetPosition)
     {
-        targetPosition.x = Mathf.Clamp(targetPosition.x, minX, maxX);
-        targetPosition.y = Mathf.Clamp(targetPosition.y, minY, maxY);
+        if (walkableArea != null)
+        {
+            targetPosition = walkableArea.ClosestPoint(targetPosition);
+        }
 
         StopAllCoroutines();
         StartCoroutine(MoveToPoint(targetPosition));
     }
 
-    // Inicia el movimiento hacia el punto de destino del Ìtem
     private void InteractWithItem(ItemData item)
     {
         StopAllCoroutines();
@@ -52,11 +49,12 @@ public class ClickManager : MonoBehaviour
 
     private IEnumerator MoveAndInteract(ItemData item)
     {
-        // Va hacia el goToPoint del ItemData
-        yield return StartCoroutine(MoveToPoint(item.goToPoint.position));
+        Vector2 safePoint = item.goToPoint.position;
+        if (walkableArea != null) safePoint = walkableArea.ClosestPoint(safePoint);
 
-        // PrÛximo evento pal item o evento de interacciÛn
-        Debug.Log("LlegÛ al item " + item.gameObject.name);
+        yield return StartCoroutine(MoveToPoint(safePoint));
+
+        Debug.Log("Lleg√≥ al item " + item.gameObject.name);
     }
 
     public IEnumerator MoveToPoint(Vector2 point)
@@ -69,5 +67,5 @@ public class ClickManager : MonoBehaviour
             yield return null;
         }
         player.position = point;
-    }// auuuuuu
+    }
 }
