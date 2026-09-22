@@ -103,11 +103,11 @@ ScriptedImporter:
     customData: 
     rect:
       serializedVersion: 2
-      x: 4
-      y: 732
+      x: 1429
+      y: 4
       width: 521
       height: 448
-    spriteID: 9a4ff8c0b158573459ad40e4863e8098
+    spriteID: e22a21289604962428cc227981343ee7
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -115,7 +115,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 732}
+    uvTransform: {x: 1429, y: 4}
     spritePosition: {x: 188, y: 157}
   - name: circulo de interacciones
     originalName: 
@@ -129,7 +129,7 @@ ScriptedImporter:
       y: 4
       width: 758
       height: 720
-    spriteID: 5b66824d8e202ce4db10b593504b2de2
+    spriteID: 1f7a46c72c5e45f4dbb10be32bdf292f
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -139,6 +139,94 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 4, y: 4}
     spritePosition: {x: 65, y: 5}
+  - name: Entrar/Salir
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 1419
+      width: 748
+      height: 564
+    spriteID: c6ca1a9e79ead4c4e9c434c7739ecdaf
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 1419}
+    spritePosition: {x: 55, y: 83}
+  - name: hablar
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 770
+      y: 4
+      width: 651
+      height: 645
+    spriteID: e90e3576e3fb5b34287d72a399a3402e
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 669, y: -38}
+    spritePosition: {x: 101, y: 42}
+  - name: ver/observar
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 732
+      width: 716
+      height: 679
+    spriteID: 6103e96839e9b594482eaa54547f8b89
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: -82, y: 695}
+    spritePosition: {x: 86, y: 37}
+  - name: interactuar
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 770
+      y: 657
+      width: 669
+      height: 600
+    spriteID: b0eaddbdb88162f43ba269c071a9d372
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 739, y: 614}
+    spritePosition: {x: 117, y: 43}
   spriteImportData: []
   rigSpriteImportData: []
   sharedRigSpriteImportData: []
@@ -190,9 +278,9 @@ ScriptedImporter:
     spriteName: puntero
     isGroup: 0
     parentIndex: -1
-    spriteID: 9a4ff8c0b158573459ad40e4863e8098
-    layerID: 0
-    mosaicPosition: {x: 4, y: 732}
+    spriteID: e22a21289604962428cc227981343ee7
+    layerID: 9
+    mosaicPosition: {x: 1429, y: 4}
     flatten: 0
     isImported: 1
     isVisible: 1
@@ -200,8 +288,8 @@ ScriptedImporter:
     spriteName: circulo de interacciones
     isGroup: 0
     parentIndex: -1
-    spriteID: 5b66824d8e202ce4db10b593504b2de2
-    layerID: 1102698559
+    spriteID: 1f7a46c72c5e45f4dbb10be32bdf292f
+    layerID: 8
     mosaicPosition: {x: 4, y: 4}
     flatten: 0
     isImported: 1
@@ -210,51 +298,51 @@ ScriptedImporter:
     spriteName: 
     isGroup: 1
     parentIndex: -1
-    spriteID: 7402a0eef5bc52e4ca02ecb12e70190f
-    layerID: 770273603
+    spriteID: 66e53d6d35b658442a61416adf47133d
+    layerID: 7
     mosaicPosition: {x: 0, y: 0}
     flatten: 0
     isImported: 0
-    isVisible: 0
+    isVisible: 1
   - name: Entrar/Salir
-    spriteName: 
+    spriteName: Entrar/Salir
     isGroup: 0
     parentIndex: 2
-    spriteID: 356d842c8ad3f7b4a8eb5fa0b2b5d0e7
-    layerID: 1660959888
-    mosaicPosition: {x: 0, y: 0}
+    spriteID: c6ca1a9e79ead4c4e9c434c7739ecdaf
+    layerID: 6
+    mosaicPosition: {x: 4, y: 1419}
     flatten: 0
-    isImported: 0
+    isImported: 1
     isVisible: 1
   - name: hablar
-    spriteName: 
+    spriteName: hablar
     isGroup: 0
     parentIndex: 2
-    spriteID: da42b31fa1c1e024fb418190c0cf5040
-    layerID: 1504735504
-    mosaicPosition: {x: 0, y: 0}
+    spriteID: e90e3576e3fb5b34287d72a399a3402e
+    layerID: 5
+    mosaicPosition: {x: 770, y: 4}
     flatten: 0
-    isImported: 0
+    isImported: 1
     isVisible: 1
   - name: ver/observar
-    spriteName: 
+    spriteName: ver/observar
     isGroup: 0
     parentIndex: 2
-    spriteID: 3011d6470111e3e4d8fd2bedf7478489
-    layerID: 598949898
-    mosaicPosition: {x: 0, y: 0}
+    spriteID: 6103e96839e9b594482eaa54547f8b89
+    layerID: 4
+    mosaicPosition: {x: 4, y: 732}
     flatten: 0
-    isImported: 0
+    isImported: 1
     isVisible: 1
   - name: interactuar
-    spriteName: 
+    spriteName: interactuar
     isGroup: 0
     parentIndex: 2
-    spriteID: 2f9f9febd63b11a4f8d27716a8600eaa
-    layerID: -1245293776
-    mosaicPosition: {x: 0, y: 0}
+    spriteID: b0eaddbdb88162f43ba269c071a9d372
+    layerID: 3
+    mosaicPosition: {x: 770, y: 657}
     flatten: 0
-    isImported: 0
+    isImported: 1
     isVisible: 1
   mosaicPSDLayers: []
   rigPSDLayers: []
