@@ -23,24 +23,24 @@ public class ClickManager : MonoBehaviour
     {
         if (Mouse.current != null && Mouse.current.leftButton.wasPressedThisFrame)
         {
-            if (EventSystem.current.IsPointerOverGameObject())
-            {
-                return; 
-            }
+            if (EventSystem.current.IsPointerOverGameObject()) return;
 
             Vector2 screenPosition = Mouse.current.position.ReadValue();
             Vector2 clickPosition = Camera.main.ScreenToWorldPoint(screenPosition);
-            RaycastHit2D hit = Physics2D.Raycast(clickPosition, Vector2.zero);
+            
+            RaycastHit2D[] hits = Physics2D.RaycastAll(clickPosition, Vector2.zero);
+            
+            bool interactuo = false; 
 
-            if (hit.collider != null)
+            foreach (RaycastHit2D hit in hits)
             {
-                
                 Doors puertaClickeada = hit.collider.GetComponent<Doors>();
                 if (puertaClickeada != null)
                 {
                     StopAllCoroutines();
                     StartCoroutine(WalkAndEnterDoor(puertaClickeada));
-                    return; // Cortamos la ejecución aquí
+                    interactuo = true;
+                    break;
                 }
 
                 ItemData clickedItem = hit.collider.GetComponent<ItemData>();
@@ -48,12 +48,16 @@ public class ClickManager : MonoBehaviour
                 {
                     StopAllCoroutines();
                     StartCoroutine(WalkAndShowMenu(clickedItem));
-                    return;
+                    interactuo = true;
+                    break;
                 }
             }
-            
-            if (interactionMenu != null) interactionMenu.HideMenu();
-            WalkToPoint(clickPosition);
+
+            if (!interactuo)
+            {
+                if (interactionMenu != null) interactionMenu.HideMenu();
+                WalkToPoint(clickPosition);
+            }
         }
     }
 

@@ -1,5 +1,8 @@
 using UnityEngine;
 using Unity.Cinemachine;
+using DG.Tweening;
+using UnityEngine.UI;
+using System.Collections;
 
 public class RoomManager : MonoBehaviour
 {
@@ -10,11 +13,20 @@ public class RoomManager : MonoBehaviour
     public ClickManager clickManager;
     public CinemachineCamera camaraVirtual;
     public CinemachineConfiner2D confiner;
+
+    [Header("Transición")]
+    public Image pantallaNegra;
+    public float tiempoFade = 0.5f;
     
     private GameObject habitacionActual;
 
     void Start()
     {
+        if (pantallaNegra != null)
+        {
+            pantallaNegra.color = new Color(0, 0, 0, 0);
+            pantallaNegra.raycastTarget = false; 
+        }
         if (habitacionInicial != null)
         {
             habitacionActual = habitacionInicial;
@@ -22,23 +34,41 @@ public class RoomManager : MonoBehaviour
         }
         else
         {
-            Debug.LogError("o se ha asignado la 'Habitacion Inicial' en el RoomManager.");
+            Debug.LogError("No se ha asignado la 'Habitacion Inicial' en el RoomManager.");
         }
     }
 
     public void CambiarHabitacion(GameObject nuevaHabitacion, Transform nuevoPuntoAparicion)
     {
-        if (habitacionActual != null)
+       
+        StartCoroutine(RutinaTransicion(nuevaHabitacion, nuevoPuntoAparicion));
+    }
+
+    private IEnumerator RutinaTransicion(GameObject nuevaHabitacion, Transform nuevoPuntoAparicion)
+    {
+        if (pantallaNegra != null)
         {
-            habitacionActual.SetActive(false);
+            pantallaNegra.raycastTarget = true; 
+            pantallaNegra.DOFade(1f, tiempoFade); 
+            yield return new WaitForSeconds(tiempoFade); 
         }
 
-        player.position = nuevoPuntoAparicion.position;
+        if (habitacionActual != null) habitacionActual.SetActive(false);
 
+        player.position = new Vector3(nuevoPuntoAparicion.position.x, nuevoPuntoAparicion.position.y, 0f);
         nuevaHabitacion.SetActive(true);
         habitacionActual = nuevaHabitacion;
 
+        yield return new WaitForSeconds(0.5f);
+
         ConfigurarSala(nuevaHabitacion);
+
+        if (pantallaNegra != null)
+        {
+            pantallaNegra.DOFade(0f, tiempoFade).OnComplete(() => {
+                pantallaNegra.raycastTarget = false; 
+            });
+        }
     }
 
     private void ConfigurarSala(GameObject sala)
