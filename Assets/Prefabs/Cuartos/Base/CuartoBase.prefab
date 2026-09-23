@@ -478,6 +478,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   goToPoint: {fileID: 630716459022752295}
+  puedeVer: 1
+  puedeTocar: 1
+  puedeHablar: 1
+  puedeEntrarSalir: 0
 --- !u!61 &4448227811645386735
 BoxCollider2D:
   m_ObjectHideFlags: 0

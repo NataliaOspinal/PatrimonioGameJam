@@ -5,11 +5,26 @@ public class InteractionMenu : MonoBehaviour
     public ClickManager clickManager;
     private ItemData currentItem;
 
-    // Muestra el menú donde está el cursor
-    public void ShowMenu(ItemData item, Vector2 screenPosition)
+    [Header("Botones del MenÃº Radial")]
+    public GameObject btnVer;
+    public GameObject btnTocar;
+    public GameObject btnHablar;
+    public GameObject btnEntrarSalir;
+
+    // Muestra el menï¿½ donde estï¿½ el cursor
+    public void ShowMenu(ItemData item)
     {
         currentItem = item;
-        transform.position = screenPosition;
+
+        if (btnVer != null) btnVer.SetActive(item.puedeVer);
+        if (btnTocar != null) btnTocar.SetActive(item.puedeTocar);
+        if (btnHablar != null) btnHablar.SetActive(item.puedeHablar);
+
+        Vector3 nuevaPosicion = item.transform.position + new Vector3(0, 1.5f, 0);
+
+        nuevaPosicion.z = 0f;
+
+        transform.position = nuevaPosicion;        
         gameObject.SetActive(true);
     }
 
@@ -18,7 +33,7 @@ public class InteractionMenu : MonoBehaviour
         gameObject.SetActive(false);
     }
 
-    // Funciones on cli
+    // Funciones on click
 
     public void OnLookClicked()
     {
