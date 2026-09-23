@@ -5,6 +5,9 @@ using UnityEngine.EventSystems;
 
 public class ClickManager : MonoBehaviour
 {
+    public RoomManager roomManager;
+
+
     float moveSpeed = 3.5f, moveAccuracy = 0.15f;
     public Transform player;
 
@@ -24,26 +27,46 @@ public class ClickManager : MonoBehaviour
             {
                 return; 
             }
-            
+
             Vector2 screenPosition = Mouse.current.position.ReadValue();
             Vector2 clickPosition = Camera.main.ScreenToWorldPoint(screenPosition);
             RaycastHit2D hit = Physics2D.Raycast(clickPosition, Vector2.zero);
 
-            if (hit.collider != null && hit.collider.GetComponent<ItemData>() != null)
+            if (hit.collider != null)
             {
-                ItemData clickedItem = hit.collider.GetComponent<ItemData>();
                 
-                // 1. Detenemos cualquier movimiento anterior
-                StopAllCoroutines();
-                // 2. Iniciamos la corrutina que camina y LUEGO muestra el menú
-                StartCoroutine(WalkAndShowMenu(clickedItem));
+                Doors puertaClickeada = hit.collider.GetComponent<Doors>();
+                if (puertaClickeada != null)
+                {
+                    StopAllCoroutines();
+                    StartCoroutine(WalkAndEnterDoor(puertaClickeada));
+                    return; // Cortamos la ejecución aquí
+                }
+
+                ItemData clickedItem = hit.collider.GetComponent<ItemData>();
+                if (clickedItem != null)
+                {
+                    StopAllCoroutines();
+                    StartCoroutine(WalkAndShowMenu(clickedItem));
+                    return;
+                }
             }
-            else
-            {
-                if (interactionMenu != null) interactionMenu.HideMenu();
-                WalkToPoint(clickPosition);
-            }
+            
+            if (interactionMenu != null) interactionMenu.HideMenu();
+            WalkToPoint(clickPosition);
         }
+    }
+
+    private IEnumerator WalkAndEnterDoor(Doors puerta)
+    {
+        if (interactionMenu != null) interactionMenu.HideMenu();
+
+        Vector2 safePoint = puerta.goToPoint.position;
+        if (walkableArea != null) safePoint = walkableArea.ClosestPoint(safePoint);
+
+        yield return StartCoroutine(MoveToPoint(safePoint));
+
+        roomManager.CambiarHabitacion(puerta.habitacionDestino, puerta.puntoDeAparicion);
     }
 
     private void WalkToPoint(Vector2 targetPosition)
