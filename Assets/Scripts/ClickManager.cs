@@ -43,6 +43,15 @@ public class ClickManager : MonoBehaviour
                     break;
                 }
 
+                NPCDialogo npcClickeado = hit.collider.GetComponent<NPCDialogo>();
+            if (npcClickeado != null)
+            {
+                StopAllCoroutines();
+                StartCoroutine(WalkAndTalk(npcClickeado));
+                interactuo = true;
+                break;
+            }
+
                 ItemData clickedItem = hit.collider.GetComponent<ItemData>();
                 if (clickedItem != null)
                 {
@@ -137,5 +146,25 @@ public class ClickManager : MonoBehaviour
             yield return null;
         }
         player.position = point;
+    }
+
+    private IEnumerator WalkAndTalk(NPCDialogo npc)
+    {
+        if (interactionMenu != null) interactionMenu.HideMenu();
+
+        Vector2 destino = npc.goToPoint != null ? npc.goToPoint.position : npc.transform.position;
+        if (walkableArea != null) destino = walkableArea.ClosestPoint(destino);
+
+        yield return StartCoroutine(MoveToPoint(destino));
+
+        DialogueManager dialogueManager = FindFirstObjectByType<DialogueManager>();
+        if (dialogueManager != null && npc.nodoInicial != null)
+        {
+            dialogueManager.IniciarDialogo(npc.nodoInicial);
+        }
+        else
+        {
+            Debug.LogWarning("Falta el DialogueManager en la escena o el NPC no tiene nodo inicial.");
+        }
     }
 }
