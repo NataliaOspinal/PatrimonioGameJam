@@ -4,31 +4,30 @@ using UnityEngine.UI;
 
 public class InventoryManager : MonoBehaviour
 {
-    //Animación del panel de inventario
-    public RectTransform panelInventario; // Sprite
-    public float posicionOcultoY = 300f;  // Posición Y fuera de la pantalla
-    public float posicionVisibleY = -150f; // Posición Y dentro de la pantalla
+    // Panel del inventario y sus posiciones
+    public RectTransform panelInventario;
+    public float posicionOcultoY = 300f;
+    public float posicionVisibleY = -150f;
     public float velocidadTransicion = 10f;
 
     private bool estaAbierto = false;
     private Coroutine animacionActual;
 
-    //Casillas (Slots)
-    public Image[] slots;
+    // Slots del inventario y el ícono de arrastre
+    public InventorySlot[] slots;
+    public Image iconoArrastre;
     private int itemsActuales = 0;
 
     void Start()
     {
-        // Ocultar el panel al inicio y vaciar casillas
         panelInventario.anchoredPosition = new Vector2(panelInventario.anchoredPosition.x, posicionOcultoY);
-        foreach (Image slot in slots)
+        foreach (InventorySlot slot in slots)
         {
-            slot.sprite = null;
-            slot.enabled = false; // Se oculta si no hay ítem
+            slot.VaciarSlot();
         }
+        iconoArrastre.gameObject.SetActive(false);
     }
 
-    // Cuando se apreta la canasta
     public void ToggleInventario()
     {
         estaAbierto = !estaAbierto;
@@ -49,18 +48,34 @@ public class InventoryManager : MonoBehaviour
         panelInventario.anchoredPosition = destino;
     }
 
-    // Al tocar un objeto
-    public bool AgregarItem(Sprite icono)
+    // Recibe data del item y lo agrega al inventario si hay espacio disponible
+    public bool AgregarItem(ItemData item)
     {
         if (itemsActuales >= slots.Length)
         {
             Debug.LogWarning("El inventario está lleno.");
-            return false; // No se pudo agregar
+            return false;
         }
 
-        slots[itemsActuales].sprite = icono;
-        slots[itemsActuales].enabled = true;
+        slots[itemsActuales].SetupSlot(item);
         itemsActuales++;
         return true;
+    }
+
+    // Funciones para manejar el arrastre del ícono del objeto
+    public void IniciarArrastre(Sprite sprite)
+    {
+        iconoArrastre.sprite = sprite;
+        iconoArrastre.gameObject.SetActive(true);
+    }
+
+    public void ActualizarPosicionArrastre(Vector2 posicionPantalla)
+    {
+        iconoArrastre.transform.position = posicionPantalla;
+    }
+
+    public void FinalizarArrastre()
+    {
+        iconoArrastre.gameObject.SetActive(false);
     }
 }

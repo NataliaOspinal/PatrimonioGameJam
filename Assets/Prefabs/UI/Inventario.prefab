@@ -144,6 +144,7 @@ GameObject:
   - component: {fileID: 3492525386936543473}
   - component: {fileID: 3386323034207610740}
   - component: {fileID: 2546881166892009239}
+  - component: {fileID: 1375726917802992150}
   m_Layer: 5
   m_Name: Image (3)
   m_TagString: Untagged
@@ -208,6 +209,19 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &1375726917802992150
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1098345824131593846}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 105e9c40b8768c74c8819beed2742ffd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::InventorySlot
+  itemGuardado: {fileID: 0}
 --- !u!1 &1487992951693846744
 GameObject:
   m_ObjectHideFlags: 0
@@ -219,6 +233,7 @@ GameObject:
   - component: {fileID: 1406277147133704939}
   - component: {fileID: 8460947319156247903}
   - component: {fileID: 1036306755492573317}
+  - component: {fileID: 2715594145774884425}
   m_Layer: 5
   m_Name: Image (1)
   m_TagString: Untagged
@@ -283,6 +298,19 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &2715594145774884425
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1487992951693846744}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 105e9c40b8768c74c8819beed2742ffd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::InventorySlot
+  itemGuardado: {fileID: 0}
 --- !u!1 &1879551744799959240
 GameObject:
   m_ObjectHideFlags: 0
@@ -317,6 +345,7 @@ RectTransform:
   m_Children:
   - {fileID: 3620982340050754774}
   - {fileID: 8756704590803303455}
+  - {fileID: 2564417989486638818}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
@@ -369,7 +398,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 0
+  m_PresetInfoIsWorld: 1
 --- !u!114 &6684265410437108975
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -404,14 +433,15 @@ MonoBehaviour:
   posicionVisibleY: -150
   velocidadTransicion: 10
   slots:
-  - {fileID: 6986098385053938391}
-  - {fileID: 1036306755492573317}
-  - {fileID: 2997737757176953826}
-  - {fileID: 2546881166892009239}
-  - {fileID: 7925941177343393219}
-  - {fileID: 1000624492980009237}
-  - {fileID: 7053738331877455513}
-  - {fileID: 3124306856825131894}
+  - {fileID: 6687773687933643979}
+  - {fileID: 2715594145774884425}
+  - {fileID: 967031182462966503}
+  - {fileID: 1375726917802992150}
+  - {fileID: 8716353433841340836}
+  - {fileID: 7161297456031982611}
+  - {fileID: 2567113528046815285}
+  - {fileID: 169792671059433376}
+  iconoArrastre: {fileID: 5179424697552450218}
 --- !u!1 &3795724675226288490
 GameObject:
   m_ObjectHideFlags: 0
@@ -423,6 +453,7 @@ GameObject:
   - component: {fileID: 3956722192805054868}
   - component: {fileID: 3856846036176164290}
   - component: {fileID: 7925941177343393219}
+  - component: {fileID: 8716353433841340836}
   m_Layer: 5
   m_Name: Image (4)
   m_TagString: Untagged
@@ -487,6 +518,19 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &8716353433841340836
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3795724675226288490}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 105e9c40b8768c74c8819beed2742ffd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::InventorySlot
+  itemGuardado: {fileID: 0}
 --- !u!1 &4154374990476423416
 GameObject:
   m_ObjectHideFlags: 0
@@ -498,6 +542,7 @@ GameObject:
   - component: {fileID: 7103078794386895005}
   - component: {fileID: 2080278617378446322}
   - component: {fileID: 1000624492980009237}
+  - component: {fileID: 7161297456031982611}
   m_Layer: 5
   m_Name: Image (5)
   m_TagString: Untagged
@@ -562,6 +607,19 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &7161297456031982611
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4154374990476423416}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 105e9c40b8768c74c8819beed2742ffd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::InventorySlot
+  itemGuardado: {fileID: 0}
 --- !u!1 &4159480366773898199
 GameObject:
   m_ObjectHideFlags: 0
@@ -786,6 +844,7 @@ GameObject:
   - component: {fileID: 4298248817140990388}
   - component: {fileID: 6038207679948759072}
   - component: {fileID: 3124306856825131894}
+  - component: {fileID: 169792671059433376}
   m_Layer: 5
   m_Name: Image (7)
   m_TagString: Untagged
@@ -850,6 +909,19 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &169792671059433376
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5779751234861505247}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 105e9c40b8768c74c8819beed2742ffd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::InventorySlot
+  itemGuardado: {fileID: 0}
 --- !u!1 &6627457165581819799
 GameObject:
   m_ObjectHideFlags: 0
@@ -929,6 +1001,7 @@ GameObject:
   - component: {fileID: 4171323820497765185}
   - component: {fileID: 828493593117924138}
   - component: {fileID: 2997737757176953826}
+  - component: {fileID: 967031182462966503}
   m_Layer: 5
   m_Name: Image (2)
   m_TagString: Untagged
@@ -993,6 +1066,19 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &967031182462966503
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7722661548065193890}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 105e9c40b8768c74c8819beed2742ffd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::InventorySlot
+  itemGuardado: {fileID: 0}
 --- !u!1 &7816171719942135537
 GameObject:
   m_ObjectHideFlags: 0
@@ -1004,6 +1090,7 @@ GameObject:
   - component: {fileID: 3945485295328800673}
   - component: {fileID: 9097136043310883176}
   - component: {fileID: 7053738331877455513}
+  - component: {fileID: 2567113528046815285}
   m_Layer: 5
   m_Name: Image (6)
   m_TagString: Untagged
@@ -1068,6 +1155,94 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &2567113528046815285
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7816171719942135537}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 105e9c40b8768c74c8819beed2742ffd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::InventorySlot
+  itemGuardado: {fileID: 0}
+--- !u!1 &8019955797627003152
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2564417989486638818}
+  - component: {fileID: 2118250487047620549}
+  - component: {fileID: 5179424697552450218}
+  m_Layer: 5
+  m_Name: IconoArrastre
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &2564417989486638818
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8019955797627003152}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5908359955291659106}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -97.78247, y: 124.54181}
+  m_SizeDelta: {x: 180, y: 180}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &2118250487047620549
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8019955797627003152}
+  m_CullTransparentMesh: 1
+--- !u!114 &5179424697552450218
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8019955797627003152}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 0
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
 --- !u!1 &9189408663488236553
 GameObject:
   m_ObjectHideFlags: 0
@@ -1079,6 +1254,7 @@ GameObject:
   - component: {fileID: 451688772021475414}
   - component: {fileID: 4624847442176697206}
   - component: {fileID: 6986098385053938391}
+  - component: {fileID: 6687773687933643979}
   m_Layer: 5
   m_Name: Image
   m_TagString: Untagged
@@ -1143,3 +1319,16 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &6687773687933643979
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9189408663488236553}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 105e9c40b8768c74c8819beed2742ffd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::InventorySlot
+  itemGuardado: {fileID: 0}

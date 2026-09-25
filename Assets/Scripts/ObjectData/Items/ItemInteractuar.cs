@@ -55,17 +55,17 @@ public class ItemInteractuar : MonoBehaviour
                 break;
 
             case "Tocar":
-                if (item.categoria == CategoriaInteraccion.SoloVer)
+                if (item.categoria == CategoriaInteraccion.SoloVer) 
                 {
                     Debug.LogWarning("Este objeto es de SoloVer y no se puede tocar.");
                 }
                 else
                 {
-                    // Se intenta agregar el item al inventario
-                    if (inventoryManager != null && inventoryManager.AgregarItem(item.iconoInventario))
+                    // Cambiamos item.iconoInventario por simplemente "item"
+                    if (inventoryManager != null && inventoryManager.AgregarItem(item))
                     {
                         Debug.Log($"El objeto '{item.gameObject.name}' está en el inventario.");
-                        item.gameObject.SetActive(false); // Desaparece del mundo
+                        item.gameObject.SetActive(false);
                     }
                 }
                 break;
