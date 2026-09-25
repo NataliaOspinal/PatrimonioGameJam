@@ -40,7 +40,7 @@ public class InteractionMenu : MonoBehaviour
 
             case CategoriaInteraccion.NPC:
                 if (btnVer != null) btnVer.SetActive(true);
-                if (btnTocar != null) btnTocar.SetActive(true);
+               // if (btnTocar != null) btnTocar.SetActive(true);
                 if (btnHablar != null) btnHablar.SetActive(true);
                 break;
         }

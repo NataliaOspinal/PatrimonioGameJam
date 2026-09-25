@@ -10,8 +10,26 @@ public class DialogueManager : MonoBehaviour
     public Transform contenedorOpciones; 
     public GameObject prefabBotonOpcion; 
 
+    [Header("Clic para Avanzar (Unilateral)")]
+    public Button botonPantallaCompleta; // botón invisible que atrapa los clicks
+    private DialogueNode nodoPendiente;
+
+    void Start()
+    {
+        
+        if (panelDialogo != null) panelDialogo.SetActive(false);
+
+        if (botonPantallaCompleta != null)
+        {
+            botonPantallaCompleta.onClick.AddListener(AlHacerClicEnPantalla);
+        }
+    }
+
     public void IniciarDialogo(DialogueNode nodoInicial)
     {
+        ClickManager clickManager = FindFirstObjectByType<ClickManager>();
+        if (clickManager != null) clickManager.enabled = false;
+
         panelDialogo.SetActive(true);
         MostrarNodo(nodoInicial);
     }
@@ -25,16 +43,19 @@ public class DialogueManager : MonoBehaviour
             Destroy(child.gameObject);
         }
 
-        if (nodo.opciones == null || nodo.opciones.Count == 0)
+        if (nodo.opciones != null && nodo.opciones.Count > 0)
         {
-            CrearBoton("Terminar conversación", null);
-        }
-        else
-        {
+            botonPantallaCompleta.gameObject.SetActive(false); // Apagamos el clic de pantalla completa
+
             foreach (OpcionDialogo opcion in nodo.opciones)
             {
                 CrearBoton(opcion.textoJugador, opcion.siguienteNodo);
             }
+        }
+        else
+        {
+            botonPantallaCompleta.gameObject.SetActive(true); 
+            nodoPendiente = nodo.siguienteNodoLineal;         
         }
     }
 
@@ -51,11 +72,25 @@ public class DialogueManager : MonoBehaviour
     {
         if (nodoDestino == null)
         {
-            panelDialogo.SetActive(false);
+           TerminarDialogo();
         }
         else
         {
             MostrarNodo(nodoDestino);
         }
+    }
+
+    private void AlHacerClicEnPantalla()
+    {
+        if (nodoPendiente == null) TerminarDialogo();
+        else MostrarNodo(nodoPendiente);
+    }
+
+    private void TerminarDialogo()
+    {
+        panelDialogo.SetActive(false);
+
+        ClickManager clickManager = FindFirstObjectByType<ClickManager>();
+        if (clickManager != null) clickManager.enabled = true;
     }
 }

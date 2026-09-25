@@ -10,11 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e955c488978417944ab9ff8b48ca9233, type: 3}
-  m_Name: Nodo1
+  m_Name: NodoVer
   m_EditorClassIdentifier: Assembly-CSharp::DialogueNode
-  textoNPC: "Holaaaaaa, \xBFqui\xE9n eres?"
-  opciones:
-  - textoJugador: six seven
-    siguienteNodo: {fileID: 11400000, guid: 4b2ec0f939d6bd64281af835c286e99e, type: 2}
-  - textoJugador: seis siete
-    siguienteNodo: {fileID: 11400000, guid: 2c33523772fb8b54e8e239a0341dc1e8, type: 2}
+  textoNPC: 
+  siguienteNodoLineal: {fileID: 0}
+  opciones: []

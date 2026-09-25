@@ -27,12 +27,12 @@ public class ItemInteractuar : MonoBehaviour
 
         if (interactionMenu != null)
         {
-            // para mostrar el menú radial, se pasa el item y la posición del mouse
+            // para mostrar el menï¿½ radial, se pasa el item y la posiciï¿½n del mouse
             interactionMenu.ShowMenu(item);
         }
     }
 
-    // Click en el menú radial
+    // Click en el menï¿½ radial
     public void EjecutarAccion(ItemData item, string accion)
     {
         clickManager.StopAllCoroutines();
@@ -47,34 +47,50 @@ public class ItemInteractuar : MonoBehaviour
 
         yield return StartCoroutine(clickManager.MoveToPoint(safePoint));
 
-        // Lee data del item y ejecuta la acción correspondiente
+        DialogueManager dialogueManager = FindFirstObjectByType<DialogueManager>();
+
+        // Lee data del item y ejecuta la acciï¿½n correspondiente
         switch (accion)
         {
             case "Ver":
-                Debug.Log($"El jugador está viendo {item.categoria}: {item.gameObject.name}");
+                if (item.nodoDialogoVer != null && dialogueManager != null)
+                {
+                    dialogueManager.IniciarDialogo(item.nodoDialogoVer);
+                }
+                else
+                {
+                    Debug.Log($"El jugador estÃ¡ viendo {item.categoria}: {item.gameObject.name}");
+                }
                 break;
 
             case "Tocar":
-                if (item.categoria == CategoriaInteraccion.SoloVer) 
+                if (item.categoria == CategoriaInteraccion.SoloVer || item.categoria == CategoriaInteraccion.NPC) 
                 {
-                    Debug.LogWarning("Este objeto es de SoloVer y no se puede tocar.");
+                    Debug.LogWarning("No puedes recoger esto.");
                 }
                 else
                 {
                     // Cambiamos item.iconoInventario por simplemente "item"
                     if (inventoryManager != null && inventoryManager.AgregarItem(item))
                     {
-                        Debug.Log($"El objeto '{item.gameObject.name}' está en el inventario.");
+                        Debug.Log($"El objeto '{item.gameObject.name}' estï¿½ en el inventario.");
                         item.gameObject.SetActive(false);
                     }
                 }
                 break;
 
             case "Hablar":
-                if (item.categoria == CategoriaInteraccion.NPC)
-                    Debug.Log("Iniciando sistema de diálogo NPC con: " + item.gameObject.name); // para incluir diálogo dsps
+                if (item.nodoDialogoHablar != null && dialogueManager != null)
+                {
+                    dialogueManager.IniciarDialogo(item.nodoDialogoHablar);
+                }
                 else
-                    Debug.Log("El jugador le está hablando a un objeto: " + item.gameObject.name);
+                {
+                    if (item.categoria == CategoriaInteraccion.NPC)
+                        Debug.Log("Este NPC no tiene diÃ¡logo de Hablar asignado.");
+                    else
+                        Debug.Log("El jugador le estÃ¡ hablando a un objeto... pero no responde.");
+                }
                 break;
         }
     }

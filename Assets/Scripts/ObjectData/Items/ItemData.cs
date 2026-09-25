@@ -9,11 +9,11 @@ public enum CategoriaInteraccion
 
 public class ItemData : MonoBehaviour
 {
-    // Configuración de Interacción
+    [Header("Configuración de Interacción")]
     public CategoriaInteraccion categoria = CategoriaInteraccion.ObjetoInteractuable;
     public Transform goToPoint;
 
-    // Identificador único del objeto
+    [Header("Datos del Inventario")]
     public string idItem;
     public Sprite iconoInventario;
 
@@ -21,4 +21,9 @@ public class ItemData : MonoBehaviour
     public string nombreObjeto;
     [TextArea(2, 4)] // multilinea
     public string descripcionObjeto;
+
+
+    [Header("Sistema de Diálogo")]
+    public DialogueNode nodoDialogoVer;    
+    public DialogueNode nodoDialogoHablar;
 }

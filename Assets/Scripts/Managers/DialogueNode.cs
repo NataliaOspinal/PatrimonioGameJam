@@ -7,6 +7,9 @@ public class DialogueNode : ScriptableObject
 {
     [TextArea(3, 10)]
     public string textoNPC; // el dialogo del personaje
+    
+    [Header("Diálogo Unilateral")]
+    public DialogueNode siguienteNodoLineal;
 
     public List<OpcionDialogo> opciones; // respuestas de las opciones
 }

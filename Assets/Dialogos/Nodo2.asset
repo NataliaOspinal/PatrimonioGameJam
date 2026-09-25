@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e955c488978417944ab9ff8b48ca9233, type: 3}
   m_Name: Nodo2
   m_EditorClassIdentifier: Assembly-CSharp::DialogueNode
-  textoNPC: 
+  textoNPC: "puro gringo hay por ac\xE1"
   opciones: []
