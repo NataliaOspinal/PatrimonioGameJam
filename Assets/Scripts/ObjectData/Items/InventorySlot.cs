@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class InventorySlot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
+public class InventorySlot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler, IPointerEnterHandler, IPointerExitHandler
 {
     public ItemData itemGuardado;
     private Image miImagen;
@@ -28,24 +28,38 @@ public class InventorySlot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
         miImagen.enabled = false;
     }
 
-    // Cuando empieza el drag (queen)
+    // Mostrar Tooltip al pasar el ratón por encima del slot
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        if (itemGuardado != null)
+        {
+            manager.MostrarTooltip(itemGuardado, eventData.position);
+        }
+    }
+
+    // Ocultar Tooltip al salir del slot
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        manager.OcultarTooltip();
+    }
+
+    // Arrastrar el item del slot
     public void OnBeginDrag(PointerEventData eventData)
     {
         if (itemGuardado == null) return;
 
-        // Icono del objeto semitransparente mientras se arrastra
+        manager.OcultarTooltip(); // Oculta el papel
+
         miImagen.color = new Color(1, 1, 1, 0.5f);
         manager.IniciarArrastre(itemGuardado.iconoInventario);
     }
 
-    // Mientras mueve el mouse con el objeto arrastrado
     public void OnDrag(PointerEventData eventData)
     {
         if (itemGuardado == null) return;
         manager.ActualizarPosicionArrastre(eventData.position);
     }
 
-    // Cuando suelta el clic
     public void OnEndDrag(PointerEventData eventData)
     {
         if (itemGuardado == null) return;
@@ -58,12 +72,10 @@ public class InventorySlot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
 
         if (hit.collider != null)
         {
-            // Lógica para usar un objeto con otro
             Debug.Log($"Intentaste usar '{itemGuardado.gameObject.name}' sobre '{hit.collider.gameObject.name}'");
         }
         else
         {
-            // El objeto regresa automáticamente
             Debug.Log("El objeto regresó al inventario.");
         }
     }

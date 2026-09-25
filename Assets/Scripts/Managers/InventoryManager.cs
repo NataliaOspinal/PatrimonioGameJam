@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class InventoryManager : MonoBehaviour
 {
@@ -18,6 +19,12 @@ public class InventoryManager : MonoBehaviour
     public Image iconoArrastre;
     private int itemsActuales = 0;
 
+    // Tooltip para mostrar información del item
+    public GameObject panelTooltip; // Imagen
+    public TextMeshProUGUI textoNombre; // El texto de título
+    public TextMeshProUGUI textoDescripcion; // El texto de la descripción
+    public Vector2 offsetTooltip = new Vector2(50f, -50f);
+
     void Start()
     {
         panelInventario.anchoredPosition = new Vector2(panelInventario.anchoredPosition.x, posicionOcultoY);
@@ -26,6 +33,7 @@ public class InventoryManager : MonoBehaviour
             slot.VaciarSlot();
         }
         iconoArrastre.gameObject.SetActive(false);
+        if (panelTooltip != null) panelTooltip.SetActive(false);
     }
 
     public void ToggleInventario()
@@ -77,5 +85,21 @@ public class InventoryManager : MonoBehaviour
     public void FinalizarArrastre()
     {
         iconoArrastre.gameObject.SetActive(false);
+    }
+
+    // Tooltip
+    public void MostrarTooltip(ItemData item, Vector2 posicionMouse)
+    {
+        textoNombre.text = item.nombreObjeto;
+        textoDescripcion.text = item.descripcionObjeto;
+
+        // Posiciona el papel cerca del ratón usando el offset para que el cursor no lo tape
+        panelTooltip.transform.position = posicionMouse + offsetTooltip;
+        panelTooltip.SetActive(true);
+    }
+
+    public void OcultarTooltip()
+    {
+        if (panelTooltip != null) panelTooltip.SetActive(false);
     }
 }

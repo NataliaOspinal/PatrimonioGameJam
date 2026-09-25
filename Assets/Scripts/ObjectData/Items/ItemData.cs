@@ -16,4 +16,9 @@ public class ItemData : MonoBehaviour
     // Identificador único del objeto
     public string idItem;
     public Sprite iconoInventario;
+
+    // Textos del inventario
+    public string nombreObjeto;
+    [TextArea(2, 4)] // multilinea
+    public string descripcionObjeto;
 }
