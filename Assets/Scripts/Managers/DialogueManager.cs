@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using System.Collections;
 
 public class DialogueManager : MonoBehaviour
 {
@@ -13,6 +14,9 @@ public class DialogueManager : MonoBehaviour
     [Header("Clic para Avanzar (Unilateral)")]
     public Button botonPantallaCompleta; // botón invisible que atrapa los clicks
     private DialogueNode nodoPendiente;
+
+    // Jugador
+    public Player player;
 
     void Start()
     {
@@ -62,17 +66,28 @@ public class DialogueManager : MonoBehaviour
     private void CrearBoton(string texto, DialogueNode nodoDestino)
     {
         GameObject nuevoBoton = Instantiate(prefabBotonOpcion, contenedorOpciones);
-        
         nuevoBoton.GetComponentInChildren<TextMeshProUGUI>().text = texto;
-        
-        nuevoBoton.GetComponent<Button>().onClick.AddListener(() => SeleccionarOpcion(nodoDestino));
+
+        // Se inicia mini animación
+        nuevoBoton.GetComponent<Button>().onClick.AddListener(() => StartCoroutine(SeleccionarOpcionAnimada(nodoDestino)));
     }
 
-    private void SeleccionarOpcion(DialogueNode nodoDestino)
+    private IEnumerator SeleccionarOpcionAnimada(DialogueNode nodoDestino)
     {
+        foreach (Transform child in contenedorOpciones)
+        {
+            Destroy(child.gameObject);
+        }
+    
+        if (player != null) player.PlayTalk(true);
+
+        yield return new WaitForSeconds(1.5f);
+
+        if (player != null) player.PlayTalk(false);
+
         if (nodoDestino == null)
         {
-           TerminarDialogo();
+            TerminarDialogo();
         }
         else
         {

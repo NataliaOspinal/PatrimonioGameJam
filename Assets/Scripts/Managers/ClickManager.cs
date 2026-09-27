@@ -9,7 +9,7 @@ public class ClickManager : MonoBehaviour
     public ItemInteractuar itemInteractive;
 
     float moveSpeed = 3.5f, moveAccuracy = 0.15f;
-    public Transform player;
+    public Player player;
 
     [Header("Área Caminable de la Sala Actual")]
     public Collider2D walkableArea;
@@ -37,12 +37,6 @@ public class ClickManager : MonoBehaviour
                     interactuo = true;
                     break;
                 }
-
-                
-
-
-
-
 
                 ItemData clickedItem = hit.collider.GetComponent<ItemData>();
                 if (clickedItem != null)
@@ -78,19 +72,21 @@ public class ClickManager : MonoBehaviour
         yield return StartCoroutine(MoveToPoint(safePoint));
         roomManager.CambiarHabitacion(puerta.habitacionDestino, puerta.puntoDeAparicion);
     }
-
-    
-    
-
     public IEnumerator MoveToPoint(Vector2 point)
     {
-        Vector2 positionDifference = point - (Vector2)player.position;
+        player.FaceTarget(point);
+        player.PlayWalk(true);
+
+        Vector2 positionDifference = point - (Vector2)player.transform.position;
         while (positionDifference.magnitude > moveAccuracy)
         {
-            player.Translate(moveSpeed * positionDifference.normalized * Time.deltaTime);
-            positionDifference = point - (Vector2)player.position;
+            player.transform.Translate(moveSpeed * positionDifference.normalized * Time.deltaTime);
+            positionDifference = point - (Vector2)player.transform.position;
             yield return null;
         }
-        player.position = point;
+        player.transform.position = point;
+
+        // Se detiene
+        player.PlayWalk(false);
     }
 }
