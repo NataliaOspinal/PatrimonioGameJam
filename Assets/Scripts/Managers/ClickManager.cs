@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.EventSystems;
 
+
 public class ClickManager : MonoBehaviour
 {
     public RoomManager roomManager;
@@ -14,20 +15,96 @@ public class ClickManager : MonoBehaviour
     [Header("Área Caminable de la Sala Actual")]
     public Collider2D walkableArea;
     public InteractionMenu interactionMenu;
+    private ItemData itemHovreadoAnterior;
+
+
 
     void Update()
     {
-        if (Mouse.current != null && Mouse.current.leftButton.wasPressedThisFrame)
+
+        if (walkableArea == null)
+        {
+            GameObject objetoArea = GameObject.Find("AreaNavegable");
+            if (objetoArea != null)
+            {
+                walkableArea = objetoArea.GetComponent<Collider2D>();
+                Debug.Log("¡Área conectada correctamente a: " + walkableArea.gameObject.name + "!");
+            }
+            else
+            {
+                Debug.LogWarning("¡Peligro: No se encontró ningún objeto llamado 'AreaNavegable'!");
+            }
+        }
+
+        if (Mouse.current == null) return;
+
+        Vector2 screenPosition = Mouse.current.position.ReadValue();
+        Vector2 mouseWorldPosition = Camera.main.ScreenToWorldPoint(screenPosition);
+
+      
+        bool menuAbierto = interactionMenu != null && interactionMenu.gameObject.activeSelf;
+
+        if (!EventSystem.current.IsPointerOverGameObject() && !menuAbierto)
+        {
+            RaycastHit2D[] hitsHover = Physics2D.RaycastAll(mouseWorldPosition, Vector2.zero);
+            ItemData itemHoverActual = null;
+            int maxOrdenHover = -9999; 
+
+            foreach (RaycastHit2D hit in hitsHover)
+            {
+                ItemData itemHover = hit.collider.GetComponent<ItemData>();
+                
+                if (itemHover != null && itemHover.textoHoverFlotante != null)
+                {
+                    SpriteRenderer sprite = hit.collider.GetComponent<SpriteRenderer>();
+                    int ordenActual = sprite != null ? sprite.sortingOrder : 0;
+
+                    if (ordenActual > maxOrdenHover)
+                    {
+                        maxOrdenHover = ordenActual;
+                        itemHoverActual = itemHover;
+                    }
+                }
+            }
+
+            if (itemHoverActual != itemHovreadoAnterior)
+            {
+                if (itemHovreadoAnterior != null && itemHovreadoAnterior.textoHoverFlotante != null)
+                {
+                    itemHovreadoAnterior.textoHoverFlotante.SetActive(false);
+                }
+
+                if (itemHoverActual != null && itemHoverActual.textoHoverFlotante != null)
+                {
+                    itemHoverActual.textoHoverFlotante.SetActive(true);
+                }
+
+                itemHovreadoAnterior = itemHoverActual;
+            }
+        }
+        else
+        {
+            if (itemHovreadoAnterior != null && itemHovreadoAnterior.textoHoverFlotante != null)
+            {
+                itemHovreadoAnterior.textoHoverFlotante.SetActive(false);
+                itemHovreadoAnterior = null;
+            }
+        }
+
+
+        
+        
+        if (Mouse.current.leftButton.wasPressedThisFrame)
         {
             if (EventSystem.current.IsPointerOverGameObject()) return;
 
-            Vector2 screenPosition = Mouse.current.position.ReadValue();
-            Vector2 clickPosition = Camera.main.ScreenToWorldPoint(screenPosition);
-
-            RaycastHit2D[] hits = Physics2D.RaycastAll(clickPosition, Vector2.zero);
+            RaycastHit2D[] hitsClick = Physics2D.RaycastAll(mouseWorldPosition, Vector2.zero);
             bool interactuo = false;
 
-            foreach (RaycastHit2D hit in hits)
+            ItemData mejorItem = null;
+            int maxOrdenVisibilidad = -9999; 
+
+            foreach (RaycastHit2D hit in hitsClick)
             {
                 Doors puertaClickeada = hit.collider.GetComponent<Doors>();
                 if (puertaClickeada != null)
@@ -41,17 +118,34 @@ public class ClickManager : MonoBehaviour
                 ItemData clickedItem = hit.collider.GetComponent<ItemData>();
                 if (clickedItem != null)
                 {
-                    // DELEGAMOS AL PUENTE
-                    itemInteractive.ProcesarClicEnItem(clickedItem);
-                    interactuo = true;
-                    break;
+                    SpriteRenderer sprite = hit.collider.GetComponent<SpriteRenderer>();
+                    int ordenActual = sprite != null ? sprite.sortingOrder : 0;
+
+                    if (ordenActual > maxOrdenVisibilidad)
+                    {
+                        maxOrdenVisibilidad = ordenActual;
+                        mejorItem = clickedItem;
+                    }
                 }
+            }
+
+            if (!interactuo && mejorItem != null)
+            {
+                itemInteractive.ProcesarClicEnItem(mejorItem);
+                interactuo = true;
             }
 
             if (!interactuo)
             {
                 if (interactionMenu != null) interactionMenu.HideMenu();
-                WalkToPoint(clickPosition);
+                
+                Vector2 destinoSeguro = mouseWorldPosition;
+                if (walkableArea != null)
+                {
+                    destinoSeguro = walkableArea.ClosestPoint(mouseWorldPosition);
+                }
+                
+                WalkToPoint(destinoSeguro);
             }
         }
     }
