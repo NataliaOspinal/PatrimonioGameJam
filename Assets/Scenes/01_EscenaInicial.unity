@@ -1112,6 +1112,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2156792068056065872, guid: b64d73d1b9b065b46b26066c333f8fdf, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -11.8
+      objectReference: {fileID: 0}
     - target: {fileID: 2158557876927867209, guid: b64d73d1b9b065b46b26066c333f8fdf, type: 3}
       propertyPath: m_LocalRotation.w
       value: 0.9999749
@@ -1294,6 +1298,7 @@ MonoBehaviour:
   clickManager: {fileID: 556228049}
   interactionMenu: {fileID: 438125639}
   inventoryManager: {fileID: 2145789920}
+  dialogueManager: {fileID: 549105791}
 --- !u!4 &1652012159
 Transform:
   m_ObjectHideFlags: 0
@@ -1500,6 +1505,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Inventario
       objectReference: {fileID: 0}
+    - target: {fileID: 3071269170909272111, guid: 508ab4c75d25e594a8322dee2dda8956, type: 3}
+      propertyPath: itemInteractive
+      value: 
+      objectReference: {fileID: 1652012158}
     - target: {fileID: 3492525386936543473, guid: 508ab4c75d25e594a8322dee2dda8956, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0

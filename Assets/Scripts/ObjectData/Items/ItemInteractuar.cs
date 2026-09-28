@@ -1,11 +1,28 @@
 using System.Collections;
 using UnityEngine;
+using System.Collections.Generic;
 
 public class ItemInteractuar : MonoBehaviour
 {
+    // Sistemas y managers
     public ClickManager clickManager;
     public InteractionMenu interactionMenu;
     public InventoryManager inventoryManager;
+    public DialogueManager dialogueManager;
+
+    // Sistema de diálogo d chill
+    private string[] respuestasGenericas = {
+        "No creo que tenga sentido usar eso ahí.",
+        "Mmm... no, eso no va a funcionar.",
+        "Debería intentar otra cosa.",
+        "Mejor guardo esto por ahora."
+    };
+    private int indiceRespuesta = 0;
+
+    // Puzzle de la maleta aka tutorial
+    private int objetosEmpacados = 0;
+    // Deben coincidir exactamente con el ID ITEM chequeen bien pls (para mi yo del futuro)
+    private List<string> itemsRequeridos = new List<string> { "Documentos", "Libro", "Abrigo" };
 
     // Click en el mundo
     public void ProcesarClicEnItem(ItemData item)
@@ -18,80 +35,137 @@ public class ItemInteractuar : MonoBehaviour
     {
         if (interactionMenu != null) interactionMenu.HideMenu();
 
-        Vector2 safePoint = item.goToPoint.position;
+        Vector2 safePoint = item.goToPoint != null ? item.goToPoint.position : item.transform.position;
         if (clickManager.walkableArea != null)
             safePoint = clickManager.walkableArea.ClosestPoint(safePoint);
 
-        // Usa el sistema de movimiento del ClickManager
         yield return StartCoroutine(clickManager.MoveToPoint(safePoint));
 
         if (interactionMenu != null)
         {
-            // para mostrar el men� radial, se pasa el item y la posici�n del mouse
             interactionMenu.ShowMenu(item);
         }
     }
 
-    // Click en el men� radial
+    // Menú radial
     public void EjecutarAccion(ItemData item, string accion)
     {
-        clickManager.StopAllCoroutines();
-        StartCoroutine(MoveAndExecute(item, accion));
+        switch (accion)
+        {
+            case "Ver":
+                // Ver no requiere moverse por obvias razones (?
+                EjecutarLogicaAccion(item, accion);
+                break;
+
+            case "Tocar":
+            case "Hablar":
+                // Tocar y Hablar requieren moverse
+                StartCoroutine(MoveAndExecute(item, accion));
+                break;
+        }
     }
 
     private IEnumerator MoveAndExecute(ItemData item, string accion)
     {
-        Vector2 safePoint = item.goToPoint.position;
+        Vector2 safePoint = item.goToPoint != null ? item.goToPoint.position : item.transform.position;
         if (clickManager.walkableArea != null)
             safePoint = clickManager.walkableArea.ClosestPoint(safePoint);
 
         yield return StartCoroutine(clickManager.MoveToPoint(safePoint));
 
-        DialogueManager dialogueManager = FindFirstObjectByType<DialogueManager>();
+        // Una vez que llega, ejecuta la acción
+        EjecutarLogicaAccion(item, accion);
+    }
 
-        // Lee data del item y ejecuta la acci�n correspondiente
+    // Lógica de cada acción
+    private void EjecutarLogicaAccion(ItemData item, string accion)
+    {
         switch (accion)
         {
             case "Ver":
-                if (item.nodoDialogoVer != null && dialogueManager != null)
+                // Si tiene un nodo de diálogo complejo lo usa, si no, usa la descripción simple
+                if (item.nodoDialogoVer != null)
                 {
                     dialogueManager.IniciarDialogo(item.nodoDialogoVer);
                 }
-                else
+                else if (!string.IsNullOrEmpty(item.descripcionObjeto))
                 {
-                    Debug.Log($"El jugador está viendo {item.categoria}: {item.gameObject.name}");
+                    dialogueManager.IniciarDialogoSimple(item.descripcionObjeto, PersonajeHablando.Martin);
                 }
                 break;
 
             case "Tocar":
-                if (item.categoria == CategoriaInteraccion.SoloVer || item.categoria == CategoriaInteraccion.NPC) 
+                if (item.categoria == CategoriaInteraccion.SoloVer || item.categoria == CategoriaInteraccion.NPC)
                 {
-                    Debug.LogWarning("No puedes recoger esto.");
+                    dialogueManager.IniciarDialogoSimple("No puedo recoger esto.", PersonajeHablando.Martin);
                 }
                 else
                 {
-                    // Cambiamos item.iconoInventario por simplemente "item"
                     if (inventoryManager != null && inventoryManager.AgregarItem(item))
                     {
-                        Debug.Log($"El objeto '{item.gameObject.name}' est� en el inventario.");
                         item.gameObject.SetActive(false);
+                        dialogueManager.IniciarDialogoSimple($"He recogido: {item.nombreObjeto}", PersonajeHablando.Martin);
                     }
                 }
                 break;
 
             case "Hablar":
-                if (item.nodoDialogoHablar != null && dialogueManager != null)
+                if (item.nodoDialogoHablar != null)
                 {
                     dialogueManager.IniciarDialogo(item.nodoDialogoHablar);
                 }
                 else
                 {
                     if (item.categoria == CategoriaInteraccion.NPC)
-                        Debug.Log("Este NPC no tiene diálogo de Hablar asignado.");
+                        Debug.LogWarning("Este NPC no tiene un nodo de diálogo asignado.");
                     else
-                        Debug.Log("El jugador le está hablando a un objeto... pero no responde.");
+                        dialogueManager.IniciarDialogoSimple("No creo que deba hablarle a las cosas...", PersonajeHablando.Martin);
                 }
                 break;
+        }
+    }
+
+    // Arrastrar del inventario 
+    public void UsarItemConItem(InventorySlot slotUsado, ItemData itemDestino)
+    {
+        StartCoroutine(RutinaUsarItem(slotUsado, itemDestino));
+    }
+
+    private IEnumerator RutinaUsarItem(InventorySlot slotUsado, ItemData itemDestino)
+    {
+        Vector2 destino = itemDestino.goToPoint != null ? itemDestino.goToPoint.position : itemDestino.transform.position;
+        yield return StartCoroutine(clickManager.MoveToPoint(destino));
+
+        ItemData itemUsado = slotUsado.itemGuardado;
+
+        if (itemDestino.idItem == "Maleta")
+        {
+            if (itemsRequeridos.Contains(itemUsado.idItem))
+            {
+                itemsRequeridos.Remove(itemUsado.idItem);
+                objetosEmpacados++;
+                slotUsado.VaciarSlot();
+                inventoryManager.ReorganizarInventario();
+
+                if (objetosEmpacados == 3)
+                {
+                    dialogueManager.IniciarDialogoSimple("Maleta lista...", PersonajeHablando.Martin);
+                }
+                else
+                {
+                    dialogueManager.IniciarDialogoSimple($"He guardado '{itemUsado.nombreObjeto}' en la maleta. Aún me faltan cosas.", PersonajeHablando.Martin);
+                }
+            }
+            else
+            {
+                dialogueManager.IniciarDialogoSimple("No necesito eso en Cádiz.", PersonajeHablando.Martin);
+            }
+        }
+        else
+        {
+            dialogueManager.IniciarDialogoSimple(respuestasGenericas[indiceRespuesta], PersonajeHablando.Martin);
+            indiceRespuesta++;
+            if (indiceRespuesta >= respuestasGenericas.Length) indiceRespuesta = 0;
         }
     }
 }

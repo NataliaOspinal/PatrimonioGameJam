@@ -68,15 +68,36 @@ public class InventorySlot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
         manager.FinalizarArrastre();
 
         Vector2 clickPosition = Camera.main.ScreenToWorldPoint(eventData.position);
-        RaycastHit2D hit = Physics2D.Raycast(clickPosition, Vector2.zero);
 
-        if (hit.collider != null)
+        RaycastHit2D[] hits = Physics2D.RaycastAll(clickPosition, Vector2.zero);
+
+        ItemData mejorItemDestino = null;
+        int maxOrdenVisibilidad = -9999;
+
+        foreach (RaycastHit2D hit in hits)
         {
-            Debug.Log($"Intentaste usar '{itemGuardado.gameObject.name}' sobre '{hit.collider.gameObject.name}'");
+            ItemData itemDestino = hit.collider.GetComponent<ItemData>();
+            if (itemDestino != null)
+            {
+                // Obtenemos el Sorting Order de su SpriteRenderer
+                SpriteRenderer sprite = hit.collider.GetComponent<SpriteRenderer>();
+                int ordenActual = sprite != null ? sprite.sortingOrder : 0;
+
+                // Si este objeto está más adelante que el anterior que encontramos, lo guardamos como el mejor candidato
+                if (ordenActual > maxOrdenVisibilidad)
+                {
+                    maxOrdenVisibilidad = ordenActual;
+                    mejorItemDestino = itemDestino;
+                }
+            }
         }
-        else
+
+        if (mejorItemDestino != null)
         {
-            Debug.Log("El objeto regresó al inventario.");
+            manager.itemInteractive.UsarItemConItem(this, mejorItemDestino);
+            return;
         }
+
+        Debug.Log("El objeto regresó al inventario.");
     }
 }

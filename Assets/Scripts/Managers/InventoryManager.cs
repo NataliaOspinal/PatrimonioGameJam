@@ -17,13 +17,15 @@ public class InventoryManager : MonoBehaviour
     // Slots del inventario y el ícono de arrastre
     public InventorySlot[] slots;
     public Image iconoArrastre;
-    private int itemsActuales = 0;
 
     // Tooltip para mostrar información del item
     public GameObject panelTooltip; // Imagen
     public TextMeshProUGUI textoNombre; // El texto de título
     public TextMeshProUGUI textoDescripcion; // El texto de la descripción
     public Vector2 offsetTooltip = new Vector2(50f, -50f);
+
+    // Conexión con itemInteractive
+    public ItemInteractuar itemInteractive;
 
     void Start()
     {
@@ -56,18 +58,44 @@ public class InventoryManager : MonoBehaviour
         panelInventario.anchoredPosition = destino;
     }
 
-    // Recibe data del item y lo agrega al inventario si hay espacio disponible
+    // Recibe data del item y lo agrega al primer slot vacío de izquierda a derecha
     public bool AgregarItem(ItemData item)
     {
-        if (itemsActuales >= slots.Length)
+        for (int i = 0; i < slots.Length; i++)
         {
-            Debug.LogWarning("El inventario está lleno.");
-            return false;
+            // Si encuentra una casilla vacía, pone el objeto ahí y corta la función
+            if (slots[i].itemGuardado == null)
+            {
+                slots[i].SetupSlot(item);
+                return true;
+            }
         }
 
-        slots[itemsActuales].SetupSlot(item);
-        itemsActuales++;
-        return true;
+        // Si el bucle termina y no encontró vacíos, el inventario está lleno
+        Debug.LogWarning("El inventario está lleno.");
+        return false;
+    }
+
+    // Recoge los objetos que quedan, limpia todo, y los vuelve a colocar desde la izquierda
+    public void ReorganizarInventario()
+    {
+        System.Collections.Generic.List<ItemData> itemsSobrevivientes = new System.Collections.Generic.List<ItemData>();
+
+        // Guardar todos los ítems que aún existen en la lista temporal
+        foreach (InventorySlot slot in slots)
+        {
+            if (slot.itemGuardado != null)
+            {
+                itemsSobrevivientes.Add(slot.itemGuardado);
+                slot.VaciarSlot(); // Vaciamos la casilla temporalmente
+            }
+        }
+
+        // Vuelve a colocarlos en orden desde el índice 0
+        for (int i = 0; i < itemsSobrevivientes.Count; i++)
+        {
+            slots[i].SetupSlot(itemsSobrevivientes[i]);
+        }
     }
 
     // Funciones para manejar el arrastre del ícono del objeto

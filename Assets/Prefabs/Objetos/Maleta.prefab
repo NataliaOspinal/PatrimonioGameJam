@@ -138,7 +138,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9d4a1ab66c72f6428834949e3887bb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  categoria: 1
+  textoHoverFlotante: {fileID: 0}
+  categoria: 0
   goToPoint: {fileID: 5957264584049472167}
   idItem: Maleta
   iconoInventario: {fileID: 21300000, guid: 9d6fcd4ea10d280449bf50db0636eff8, type: 3}

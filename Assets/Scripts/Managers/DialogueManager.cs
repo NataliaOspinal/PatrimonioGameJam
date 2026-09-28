@@ -46,6 +46,14 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
+    public void IniciarDialogoSimple(string texto, PersonajeHablando hablante = PersonajeHablando.Martin)
+    {
+        DialogueNode nodoTemp = ScriptableObject.CreateInstance<DialogueNode>();
+        nodoTemp.textoNPC = texto;
+        nodoTemp.hablante = hablante;
+
+        IniciarDialogo(nodoTemp);
+    }
     public void IniciarDialogo(DialogueNode nodoInicial)
     {
         if (clickManager != null) clickManager.enabled = false;

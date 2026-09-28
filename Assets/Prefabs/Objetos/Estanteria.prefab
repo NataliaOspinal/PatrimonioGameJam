@@ -137,12 +137,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9d4a1ab66c72f6428834949e3887bb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  categoria: 1
+  textoHoverFlotante: {fileID: 0}
+  categoria: 0
   goToPoint: {fileID: 5957264584049472167}
   idItem: Estanteria
-  iconoInventario: {fileID: 0}
+  iconoInventario: {fileID: 21300000, guid: c07db5ebd9f2fab48b3cfd70c9440be0, type: 3}
   nombreObjeto: Estanteria
-  descripcionObjeto: 
+  descripcionObjeto: "Una estanter\xEDa."
   nodoDialogoVer: {fileID: 0}
   nodoDialogoHablar: {fileID: 0}
 --- !u!61 &7482715886372079471
