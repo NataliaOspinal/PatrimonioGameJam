@@ -32,6 +32,9 @@ public class DialogueManager : MonoBehaviour
     // Jugador
     public Player player;
 
+    //Click manager 
+    public ClickManager clickManager;
+
     void Start()
     {
         
@@ -45,7 +48,6 @@ public class DialogueManager : MonoBehaviour
 
     public void IniciarDialogo(DialogueNode nodoInicial)
     {
-        ClickManager clickManager = FindFirstObjectByType<ClickManager>();
         if (clickManager != null) clickManager.enabled = false;
 
         if (baseDeDialogo != null) baseDeDialogo.SetActive(true);
@@ -181,8 +183,6 @@ public class DialogueManager : MonoBehaviour
     {
         AlCambiarHablante?.Invoke(PersonajeHablando.Ninguno);
         panelDialogo.SetActive(false);
-
-        ClickManager clickManager = FindFirstObjectByType<ClickManager>();
         if (clickManager != null) clickManager.enabled = true;
     }
 }

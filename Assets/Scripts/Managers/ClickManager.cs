@@ -3,57 +3,45 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.EventSystems;
 
-
 public class ClickManager : MonoBehaviour
 {
     public RoomManager roomManager;
     public ItemInteractuar itemInteractive;
+    public Player player;
+    public InteractionMenu interactionMenu;
+
+    public Collider2D walkableArea; // Asignado por RoomMnagaer
 
     float moveSpeed = 3.5f, moveAccuracy = 0.15f;
-    public Player player;
-
-    [Header("Área Caminable de la Sala Actual")]
-    public Collider2D walkableArea;
-    public InteractionMenu interactionMenu;
     private ItemData itemHovreadoAnterior;
 
+    // Camara
+    private Camera camaraPrincipal;
 
+    void Start()
+    {
+        camaraPrincipal = Camera.main;
+    }
 
     void Update()
     {
-
-        if (walkableArea == null)
-        {
-            GameObject objetoArea = GameObject.Find("AreaNavegable");
-            if (objetoArea != null)
-            {
-                walkableArea = objetoArea.GetComponent<Collider2D>();
-                Debug.Log("¡Área conectada correctamente a: " + walkableArea.gameObject.name + "!");
-            }
-            else
-            {
-                Debug.LogWarning("¡Peligro: No se encontró ningún objeto llamado 'AreaNavegable'!");
-            }
-        }
-
-        if (Mouse.current == null) return;
+        if (Mouse.current == null || camaraPrincipal == null) return;
 
         Vector2 screenPosition = Mouse.current.position.ReadValue();
-        Vector2 mouseWorldPosition = Camera.main.ScreenToWorldPoint(screenPosition);
+        Vector2 mouseWorldPosition = camaraPrincipal.ScreenToWorldPoint(screenPosition);
 
-      
         bool menuAbierto = interactionMenu != null && interactionMenu.gameObject.activeSelf;
 
         if (!EventSystem.current.IsPointerOverGameObject() && !menuAbierto)
         {
             RaycastHit2D[] hitsHover = Physics2D.RaycastAll(mouseWorldPosition, Vector2.zero);
             ItemData itemHoverActual = null;
-            int maxOrdenHover = -9999; 
+            int maxOrdenHover = -9999;
 
             foreach (RaycastHit2D hit in hitsHover)
             {
                 ItemData itemHover = hit.collider.GetComponent<ItemData>();
-                
+
                 if (itemHover != null && itemHover.textoHoverFlotante != null)
                 {
                     SpriteRenderer sprite = hit.collider.GetComponent<SpriteRenderer>();
@@ -91,9 +79,6 @@ public class ClickManager : MonoBehaviour
             }
         }
 
-
-        
-        
         if (Mouse.current.leftButton.wasPressedThisFrame)
         {
             if (EventSystem.current.IsPointerOverGameObject()) return;
@@ -102,7 +87,7 @@ public class ClickManager : MonoBehaviour
             bool interactuo = false;
 
             ItemData mejorItem = null;
-            int maxOrdenVisibilidad = -9999; 
+            int maxOrdenVisibilidad = -9999;
 
             foreach (RaycastHit2D hit in hitsClick)
             {
@@ -138,13 +123,13 @@ public class ClickManager : MonoBehaviour
             if (!interactuo)
             {
                 if (interactionMenu != null) interactionMenu.HideMenu();
-                
+
                 Vector2 destinoSeguro = mouseWorldPosition;
                 if (walkableArea != null)
                 {
                     destinoSeguro = walkableArea.ClosestPoint(mouseWorldPosition);
                 }
-                
+
                 WalkToPoint(destinoSeguro);
             }
         }
@@ -166,6 +151,7 @@ public class ClickManager : MonoBehaviour
         yield return StartCoroutine(MoveToPoint(safePoint));
         roomManager.CambiarHabitacion(puerta.habitacionDestino, puerta.puntoDeAparicion);
     }
+
     public IEnumerator MoveToPoint(Vector2 point)
     {
         player.FaceTarget(point);
@@ -178,9 +164,8 @@ public class ClickManager : MonoBehaviour
             positionDifference = point - (Vector2)player.transform.position;
             yield return null;
         }
-        player.transform.position = point;
+        player.transform.position = new Vector3(point.x, point.y, player.transform.position.z);
 
-        // Se detiene
         player.PlayWalk(false);
     }
 }

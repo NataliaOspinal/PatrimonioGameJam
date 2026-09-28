@@ -137,11 +137,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9d4a1ab66c72f6428834949e3887bb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  textoHoverFlotante: {fileID: 0}
   categoria: 1
   goToPoint: {fileID: 5957264584049472167}
   idItem: Carta
-  iconoInventario: {fileID: 0}
-  nombreObjeto: 
+  iconoInventario: {fileID: 21300000, guid: 08c1a99aa45bdb242ada0ea21e04467b, type: 3}
+  nombreObjeto: Carta
   descripcionObjeto: 
   nodoDialogoVer: {fileID: 0}
   nodoDialogoHablar: {fileID: 0}
