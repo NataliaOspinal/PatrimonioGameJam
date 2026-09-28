@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e955c488978417944ab9ff8b48ca9233, type: 3}
   m_Name: DialogoPt1.1
   m_EditorClassIdentifier: Assembly-CSharp::DialogueNode
+  hablante: 2
+  fuenteEspecial: {fileID: 0}
   textoNPC: "\xBFGuardaste las cartas?"
   siguienteNodoLineal: {fileID: 11400000, guid: 75d4f68c28ae49142815d8fe84b4807c, type: 2}
   opciones: []

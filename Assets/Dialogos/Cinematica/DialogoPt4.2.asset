@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e955c488978417944ab9ff8b48ca9233, type: 3}
   m_Name: DialogoPt4.2
   m_EditorClassIdentifier: Assembly-CSharp::DialogueNode
+  hablante: 1
+  fuenteEspecial: {fileID: 0}
   textoNPC: "Padre, s\xE9 hacer una maleta.\n"
-  siguienteNodoLineal: {fileID: 0}
+  siguienteNodoLineal: {fileID: 11400000, guid: de632206d8ea6744e8298d65a0d8a4d7, type: 2}
   opciones: []

@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e955c488978417944ab9ff8b48ca9233, type: 3}
   m_Name: DialogoPt1.3
   m_EditorClassIdentifier: Assembly-CSharp::DialogueNode
+  hablante: 2
+  fuenteEspecial: {fileID: 0}
   textoNPC: "Hazlo en cuanto antes Mart\xEDn."
   siguienteNodoLineal: {fileID: 11400000, guid: e906362d54237334baac69b37c0bae52, type: 2}
   opciones: []

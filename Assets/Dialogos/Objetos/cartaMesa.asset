@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e955c488978417944ab9ff8b48ca9233, type: 3}
-  m_Name: DialogoPt4.1
+  m_Name: cartaMesa
   m_EditorClassIdentifier: Assembly-CSharp::DialogueNode
-  hablante: 2
+  hablante: 0
   fuenteEspecial: {fileID: 0}
-  textoNPC: "Ma\xF1ana revisamos todo antes de salir al Callao"
-  siguienteNodoLineal: {fileID: 11400000, guid: c928ea11113849244958432c91e97f5d, type: 2}
+  textoNPC: "\"Mi padre acaba de dejar esta carta.... \xBFQu\xE9 dir\xE1 ah\xED dentro?\""
+  siguienteNodoLineal: {fileID: 0}
   opciones: []

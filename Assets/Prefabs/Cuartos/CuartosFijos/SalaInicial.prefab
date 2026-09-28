@@ -445,6 +445,9 @@ MonoBehaviour:
   puntoEscritorio: {fileID: 5834236986161940536}
   puntoSalida: {fileID: 1727219892214091828}
   velocidadCaminar: 3
+  animPadre: {fileID: 0}
+  animMartin: {fileID: 0}
+  transformMartin: {fileID: 0}
   sobreManoFrancisco: {fileID: 7687983477456855089}
   sobreEnMesa: {fileID: 2064226981725532895}
   sobreManoMartin: {fileID: 0}
@@ -574,6 +577,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1952951229826058695}
     m_Modifications:
+    - target: {fileID: 1422627680143597961, guid: 92c1eaacdac97f147830c21fe7e6d1e7, type: 3}
+      propertyPath: nodoDialogoVer
+      value: 
+      objectReference: {fileID: 11400000, guid: b42c7f7dbf9e4994797c8bcf8ef26ea0, type: 2}
     - target: {fileID: 1422627680143597961, guid: 92c1eaacdac97f147830c21fe7e6d1e7, type: 3}
       propertyPath: textoHoverFlotante
       value: 
@@ -775,6 +782,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 1952951229826058695}
     m_Modifications:
     - target: {fileID: 1422627680143597961, guid: 97a49d7ee6209eb46b06aad76e40ef8b, type: 3}
+      propertyPath: nodoDialogoVer
+      value: 
+      objectReference: {fileID: 11400000, guid: 008f6bfada38c3f4eb6c792c8210a473, type: 2}
+    - target: {fileID: 1422627680143597961, guid: 97a49d7ee6209eb46b06aad76e40ef8b, type: 3}
       propertyPath: textoHoverFlotante
       value: 
       objectReference: {fileID: 2398617011285546872}
@@ -859,6 +870,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1952951229826058695}
     m_Modifications:
+    - target: {fileID: 1422627680143597961, guid: 5ec502c7421bfcb47b3b1accf05e1ad9, type: 3}
+      propertyPath: nodoDialogoVer
+      value: 
+      objectReference: {fileID: 11400000, guid: 2a28e167cda29c847998c80af3a2efab, type: 2}
     - target: {fileID: 4439668588848257367, guid: 5ec502c7421bfcb47b3b1accf05e1ad9, type: 3}
       propertyPath: m_Name
       value: cartaMESA
@@ -951,11 +966,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1417625097270239481, guid: 074e7b304c4e14641b85550f5b5b0b2f, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.9841527
+      value: 0.9841525
       objectReference: {fileID: 0}
     - target: {fileID: 1417625097270239481, guid: 074e7b304c4e14641b85550f5b5b0b2f, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.17732315
+      value: -0.17732407
       objectReference: {fileID: 0}
     - target: {fileID: 2893582545234412171, guid: 074e7b304c4e14641b85550f5b5b0b2f, type: 3}
       propertyPath: m_Name
@@ -1007,39 +1022,39 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4249000642457766578, guid: 074e7b304c4e14641b85550f5b5b0b2f, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.0031859188
+      value: -0.0031849723
       objectReference: {fileID: 0}
     - target: {fileID: 5554658604135059556, guid: 074e7b304c4e14641b85550f5b5b0b2f, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.97113264
+      value: 0.9711327
       objectReference: {fileID: 0}
     - target: {fileID: 5554658604135059556, guid: 074e7b304c4e14641b85550f5b5b0b2f, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.23854028
+      value: -0.23854002
       objectReference: {fileID: 0}
     - target: {fileID: 5957602747318920487, guid: 074e7b304c4e14641b85550f5b5b0b2f, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.0076313
+      value: 0.007631399
       objectReference: {fileID: 0}
     - target: {fileID: 7413724564804474523, guid: 074e7b304c4e14641b85550f5b5b0b2f, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.9619035
+      value: 0.96190333
       objectReference: {fileID: 0}
     - target: {fileID: 7413724564804474523, guid: 074e7b304c4e14641b85550f5b5b0b2f, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.27338943
+      value: -0.27338973
       objectReference: {fileID: 0}
     - target: {fileID: 8283509882559427493, guid: 074e7b304c4e14641b85550f5b5b0b2f, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.09904923
+      value: -0.099049635
       objectReference: {fileID: 0}
     - target: {fileID: 8941025419890702616, guid: 074e7b304c4e14641b85550f5b5b0b2f, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.7088125
+      value: 0.7088127
       objectReference: {fileID: 0}
     - target: {fileID: 8941025419890702616, guid: 074e7b304c4e14641b85550f5b5b0b2f, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.70539707
+      value: -0.7053968
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1076,6 +1091,10 @@ PrefabInstance:
       propertyPath: m_text
       value: Maleta
       objectReference: {fileID: 0}
+    - target: {fileID: 1422627680143597961, guid: 47edbc41f2b3733438173d2a5269033f, type: 3}
+      propertyPath: nodoDialogoVer
+      value: 
+      objectReference: {fileID: 11400000, guid: 70c9f80210541ee4fa3d1ee9dcb05317, type: 2}
     - target: {fileID: 1422627680143597961, guid: 47edbc41f2b3733438173d2a5269033f, type: 3}
       propertyPath: textoHoverFlotante
       value: 
@@ -1175,6 +1194,10 @@ PrefabInstance:
       propertyPath: nombreObjeto
       value: Abrigo
       objectReference: {fileID: 0}
+    - target: {fileID: 1422627680143597961, guid: 9be8135b8d109c8408b31078d12313ce, type: 3}
+      propertyPath: nodoDialogoVer
+      value: 
+      objectReference: {fileID: 11400000, guid: 7ba29485f4ccb554da787988f58f07d0, type: 2}
     - target: {fileID: 1422627680143597961, guid: 9be8135b8d109c8408b31078d12313ce, type: 3}
       propertyPath: iconoInventario
       value: 
@@ -1276,6 +1299,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1952951229826058695}
     m_Modifications:
+    - target: {fileID: 1422627680143597961, guid: 978d76c6c55357d45b754623682aeeee, type: 3}
+      propertyPath: nodoDialogoVer
+      value: 
+      objectReference: {fileID: 11400000, guid: c01723386e09581498b954ff9d7c0f2b, type: 2}
     - target: {fileID: 1422627680143597961, guid: 978d76c6c55357d45b754623682aeeee, type: 3}
       propertyPath: textoHoverFlotante
       value: 
@@ -2061,6 +2088,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1952951229826058695}
     m_Modifications:
+    - target: {fileID: 1422627680143597961, guid: 96e4f0452a581334a9146f11bc5131f3, type: 3}
+      propertyPath: idItem
+      value: baul
+      objectReference: {fileID: 0}
+    - target: {fileID: 1422627680143597961, guid: 96e4f0452a581334a9146f11bc5131f3, type: 3}
+      propertyPath: nombreObjeto
+      value: "Ba\xFAl"
+      objectReference: {fileID: 0}
+    - target: {fileID: 1422627680143597961, guid: 96e4f0452a581334a9146f11bc5131f3, type: 3}
+      propertyPath: nodoDialogoVer
+      value: 
+      objectReference: {fileID: 11400000, guid: 3dd89c3abd919a5458ad499655c99e98, type: 2}
     - target: {fileID: 1422627680143597961, guid: 96e4f0452a581334a9146f11bc5131f3, type: 3}
       propertyPath: textoHoverFlotante
       value: 

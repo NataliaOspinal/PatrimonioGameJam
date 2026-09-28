@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e955c488978417944ab9ff8b48ca9233, type: 3}
   m_Name: DialogoPt1.2
   m_EditorClassIdentifier: Assembly-CSharp::DialogueNode
+  hablante: 1
+  fuenteEspecial: {fileID: 0}
   textoNPC: "Todav\xEDa no, padre"
   siguienteNodoLineal: {fileID: 11400000, guid: 66a7b95da620948438bda8733b092ed5, type: 2}
   opciones: []
