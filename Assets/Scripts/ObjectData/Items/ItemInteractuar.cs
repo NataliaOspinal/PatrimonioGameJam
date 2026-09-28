@@ -28,18 +28,8 @@ public class ItemInteractuar : MonoBehaviour
     public void ProcesarClicEnItem(ItemData item)
     {
         clickManager.StopAllCoroutines();
-        StartCoroutine(WalkAndShowMenu(item));
-    }
 
-    private IEnumerator WalkAndShowMenu(ItemData item)
-    {
-        if (interactionMenu != null) interactionMenu.HideMenu();
-
-        Vector2 safePoint = item.goToPoint != null ? item.goToPoint.position : item.transform.position;
-        if (clickManager.walkableArea != null)
-            safePoint = clickManager.walkableArea.ClosestPoint(safePoint);
-
-        yield return StartCoroutine(clickManager.MoveToPoint(safePoint));
+        if (clickManager.player != null) clickManager.player.PlayWalk(false);
 
         if (interactionMenu != null)
         {
