@@ -2,10 +2,24 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using System.Collections;
+using System;
 
 public class DialogueManager : MonoBehaviour
 {
+    [Header("Fuentes")]
+    public TMP_FontAsset fuentePorDefecto;
+
+    public static Action<PersonajeHablando> AlCambiarHablante;
+
+    [Header("Efecto de Texto")]
+    public float velocidadTexto = 0.03f; 
+    private bool isTyping = false;
+    private bool cancelTyping = false;
+    private Coroutine corrutinaEscribir;
+    private DialogueNode nodoActualActivo;
+
     [Header("UI del Diálogo")]
+    public GameObject baseDeDialogo;
     public GameObject panelDialogo;
     public TextMeshProUGUI textoDisplayNPC;
     public Transform contenedorOpciones; 
@@ -25,7 +39,7 @@ public class DialogueManager : MonoBehaviour
 
         if (botonPantallaCompleta != null)
         {
-            botonPantallaCompleta.onClick.AddListener(AlHacerClicEnPantalla);
+            botonPantallaCompleta.onClick.AddListener(ClickEnPantalla);
         }
     }
 
@@ -34,32 +48,81 @@ public class DialogueManager : MonoBehaviour
         ClickManager clickManager = FindFirstObjectByType<ClickManager>();
         if (clickManager != null) clickManager.enabled = false;
 
-        panelDialogo.SetActive(true);
+        if (baseDeDialogo != null) baseDeDialogo.SetActive(true);
+        if (panelDialogo != null) panelDialogo.SetActive(true);
         MostrarNodo(nodoInicial);
     }
 
     private void MostrarNodo(DialogueNode nodo)
     {
+        if (nodo.fuenteEspecial != null)
+        {
+            textoDisplayNPC.font = nodo.fuenteEspecial;
+        }
+        else
+        {
+            if (fuentePorDefecto != null)
+            {
+                textoDisplayNPC.font = fuentePorDefecto;
+            }
+        }
+
+
+        AlCambiarHablante?.Invoke(nodo.hablante);
+
         textoDisplayNPC.text = nodo.textoNPC;
 
         foreach (Transform child in contenedorOpciones)
         {
             Destroy(child.gameObject);
         }
+        nodoActualActivo = nodo;
 
-        if (nodo.opciones != null && nodo.opciones.Count > 0)
+        if (corrutinaEscribir != null)
         {
-            botonPantallaCompleta.gameObject.SetActive(false); // Apagamos el clic de pantalla completa
+            StopCoroutine(corrutinaEscribir);
+        }
 
-            foreach (OpcionDialogo opcion in nodo.opciones)
+        corrutinaEscribir = StartCoroutine(EscribirTexto(nodo.textoNPC));
+    }
+
+    private IEnumerator EscribirTexto(string textoCompleto)
+    {
+        isTyping = true;
+        cancelTyping = false;
+        textoDisplayNPC.text = "";
+
+        botonPantallaCompleta.gameObject.SetActive(true);
+
+        foreach (char letra in textoCompleto.ToCharArray())
+        {
+            if (cancelTyping)
+            {
+                textoDisplayNPC.text = textoCompleto;
+                break; 
+            }
+
+            textoDisplayNPC.text += letra;
+            yield return new WaitForSeconds(velocidadTexto);
+        }
+
+        isTyping = false;
+
+        
+        if (nodoActualActivo.opciones != null && nodoActualActivo.opciones.Count > 0)
+        {
+            botonPantallaCompleta.gameObject.SetActive(false); 
+            // Recién ahora creamos los botones de respuesta
+            foreach (OpcionDialogo opcion in nodoActualActivo.opciones)
             {
                 CrearBoton(opcion.textoJugador, opcion.siguienteNodo);
             }
         }
         else
         {
-            botonPantallaCompleta.gameObject.SetActive(true); 
-            nodoPendiente = nodo.siguienteNodoLineal;         
+            
+            botonPantallaCompleta.gameObject.SetActive(true);
+            nodoPendiente = nodoActualActivo.siguienteNodoLineal;
         }
     }
 
@@ -95,14 +158,28 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
-    private void AlHacerClicEnPantalla()
+   public void ClickEnPantalla() 
     {
-        if (nodoPendiente == null) TerminarDialogo();
-        else MostrarNodo(nodoPendiente);
+        if (isTyping)
+        {
+            cancelTyping = true;
+        }
+        else
+        {
+            if (nodoPendiente != null)
+            {
+                MostrarNodo(nodoPendiente);
+            }
+            else
+            {
+                TerminarDialogo();
+            }
+        }
     }
 
     private void TerminarDialogo()
     {
+        AlCambiarHablante?.Invoke(PersonajeHablando.Ninguno);
         panelDialogo.SetActive(false);
 
         ClickManager clickManager = FindFirstObjectByType<ClickManager>();

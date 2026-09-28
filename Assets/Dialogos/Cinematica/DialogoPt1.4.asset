@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e955c488978417944ab9ff8b48ca9233, type: 3}
-  m_Name: NodoVete
+  m_Name: DialogoPt1.4
   m_EditorClassIdentifier: Assembly-CSharp::DialogueNode
-  textoNPC: 
-  siguienteNodoLineal: {fileID: 0}
+  textoNPC: "Est\xE1n ah\xED. No van a desaparecer"
+  siguienteNodoLineal: {fileID: 11400000, guid: ec994562e1af8d44a979a6489a20846d, type: 2}
   opciones: []

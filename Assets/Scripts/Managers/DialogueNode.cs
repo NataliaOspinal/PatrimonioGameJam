@@ -1,10 +1,23 @@
 using UnityEngine;
 using System.Collections.Generic;
+using TMPro;
+
+public enum PersonajeHablando 
+{ 
+    Ninguno, 
+    Martin, 
+    Francisco 
+}
 
 // se puede crear los nodos con click derecho en una carpeta 
 [CreateAssetMenu(fileName = "NuevoNodo", menuName = "Dialogos/Nuevo Nodo")]
 public class DialogueNode : ScriptableObject
 {
+    [Header("Configuración del Nodo")]
+    public PersonajeHablando hablante = PersonajeHablando.Ninguno;
+
+    public TMP_FontAsset fuenteEspecial;
+    
     [TextArea(3, 10)]
     public string textoNPC; // el dialogo del personaje
     
