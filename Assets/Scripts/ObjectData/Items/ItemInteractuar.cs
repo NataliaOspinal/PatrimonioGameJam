@@ -9,6 +9,7 @@ public class ItemInteractuar : MonoBehaviour
     public InteractionMenu interactionMenu;
     public InventoryManager inventoryManager;
     public DialogueManager dialogueManager;
+    public InteriorBaul pantallaBaul;
 
     [Header("Conexión con Cinemáticas")]
     public GameObject cinematica2;
@@ -76,6 +77,11 @@ public class ItemInteractuar : MonoBehaviour
         switch (accion)
         {
             case "Ver":
+                if (item.idItem == "BaulExplorable")
+                {
+                    if (pantallaBaul != null) pantallaBaul.IniciarExploracion();
+                    break; // Cortamos aquí para que no siga con el código de abajo
+                }
                 // Si tiene un nodo de diálogo complejo lo usa, si no, usa la descripción simple
                 if (item.nodoDialogoVer != null)
                 {

@@ -14,9 +14,9 @@ public class InteriorBaul : MonoBehaviour
     public DialogueNode nodoObjeto3;
 
     // Nombres de los objetos para el diálogo simple, segunda vez que se tocan
-    public string nombreObjeto1 = "Parece una especie de documento.";
-    public string nombreObjeto2 = "Es un artefacto peculiar.";
-    public string nombreObjeto3 = "Un mapa antiguo.";
+    public string nombreObjeto1 = "Pedazo de cerámica decorada";
+    public string nombreObjeto2 = "Piruro de huso";
+    public string nombreObjeto3 = "Tupu metálico";
 
     private bool visto1, visto2, visto3;
     private bool estaCerrando = false;

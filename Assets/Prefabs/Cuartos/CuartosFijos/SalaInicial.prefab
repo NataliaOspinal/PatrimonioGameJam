@@ -109,10 +109,10 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 28.630318, y: -4.481972}
-      - {x: -28.604868, y: -4.4940767}
-      - {x: -28.59494, y: -8.290144}
-      - {x: 28.637234, y: -8.231518}
+    - - {x: 28.648602, y: -6.08038}
+      - {x: -28.657396, y: -6.1039996}
+      - {x: -28.630312, y: -8.325517}
+      - {x: 28.652567, y: -8.354177}
   m_UseDelaunayMesh: 1
 --- !u!1 &1476561758500732095
 GameObject:
@@ -247,6 +247,7 @@ MonoBehaviour:
   puntoMartinBaul: {fileID: 4237640054684776803}
   puntoSalida: {fileID: 7940182207955309178}
   velocidadCaminar: 3
+  velocidadCorrerAyudante: 7
   baulEnManoAyudante: {fileID: 5335721617586918300}
   baulEnSueloCerrado: {fileID: 5174047275314952290}
   baulEnSueloAbierto: {fileID: 0}
@@ -1360,23 +1361,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5554658604135059556, guid: 074e7b304c4e14641b85550f5b5b0b2f, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.9711327
+      value: 0.97113264
       objectReference: {fileID: 0}
     - target: {fileID: 5554658604135059556, guid: 074e7b304c4e14641b85550f5b5b0b2f, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.23854002
+      value: -0.23854007
       objectReference: {fileID: 0}
     - target: {fileID: 5957602747318920487, guid: 074e7b304c4e14641b85550f5b5b0b2f, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.007631399
+      value: 0.0076313
       objectReference: {fileID: 0}
     - target: {fileID: 7413724564804474523, guid: 074e7b304c4e14641b85550f5b5b0b2f, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.96190333
+      value: 0.9619034
       objectReference: {fileID: 0}
     - target: {fileID: 7413724564804474523, guid: 074e7b304c4e14641b85550f5b5b0b2f, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.27338973
+      value: -0.2733896
       objectReference: {fileID: 0}
     - target: {fileID: 8283509882559427493, guid: 074e7b304c4e14641b85550f5b5b0b2f, type: 3}
       propertyPath: m_LocalRotation.z

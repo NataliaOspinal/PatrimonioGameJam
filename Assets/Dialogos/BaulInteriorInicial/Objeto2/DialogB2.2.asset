@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e955c488978417944ab9ff8b48ca9233, type: 3}
+  m_Name: DialogB2.2
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueNode
+  hablante: 3
+  fuenteEspecial: {fileID: 0}
+  textoNPC: Antes fue de su madre.
+  siguienteNodoLineal: {fileID: 11400000, guid: f0e0d5d94091549478f7d8ff0eb19ef4, type: 2}
+  opciones: []
