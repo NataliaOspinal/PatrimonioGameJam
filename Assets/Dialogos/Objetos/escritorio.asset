@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DialogueNode
   hablante: 0
   fuenteEspecial: {fileID: 0}
-  textoNPC: "\"Mi padre acaba de dejar esta carta.... \xBFQu\xE9 dir\xE1 ah\xED dentro?\""
+  textoNPC: "\"Este escritorio est\xE1 en mi cuarto desde que tengo memoria\""
   siguienteNodoLineal: {fileID: 0}
   opciones: []

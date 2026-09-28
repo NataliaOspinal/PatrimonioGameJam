@@ -606,6 +606,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81d08fe316c131a46ba8be0fc242ad2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DialogueManager
+  fuentePorDefecto: {fileID: 11400000, guid: 9756343b567766b498d6bcabdc47249a, type: 2}
+  velocidadTexto: 0.03
   baseDeDialogo: {fileID: 1999236354}
   panelDialogo: {fileID: 795122454}
   textoDisplayNPC: {fileID: 31594177}
@@ -1080,6 +1082,10 @@ PrefabInstance:
     - target: {fileID: 975760532606039864, guid: b64d73d1b9b065b46b26066c333f8fdf, type: 3}
       propertyPath: m_LocalPosition.y
       value: -1.87
+      objectReference: {fileID: 0}
+    - target: {fileID: 1515691430726621956, guid: b64d73d1b9b065b46b26066c333f8fdf, type: 3}
+      propertyPath: m_SortingOrder
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 1727219892214091828, guid: b64d73d1b9b065b46b26066c333f8fdf, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1910,6 +1916,22 @@ PrefabInstance:
     - target: {fileID: 2641767085894771608, guid: a998abeda657afc41ba5474e7a28f208, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7613170316756168222, guid: a998abeda657afc41ba5474e7a28f208, type: 3}
+      propertyPath: m_margin.w
+      value: 28.814392
+      objectReference: {fileID: 0}
+    - target: {fileID: 7613170316756168222, guid: a998abeda657afc41ba5474e7a28f208, type: 3}
+      propertyPath: m_margin.x
+      value: 38.41925
+      objectReference: {fileID: 0}
+    - target: {fileID: 7613170316756168222, guid: a998abeda657afc41ba5474e7a28f208, type: 3}
+      propertyPath: m_margin.y
+      value: 35.23797
+      objectReference: {fileID: 0}
+    - target: {fileID: 7613170316756168222, guid: a998abeda657afc41ba5474e7a28f208, type: 3}
+      propertyPath: m_margin.z
+      value: 48.54272
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
