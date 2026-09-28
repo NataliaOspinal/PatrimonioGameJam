@@ -30,6 +30,9 @@ public class CinematicaInicial : MonoBehaviour
     public DialogueNode dialogoParte3;
     public DialogueNode dialogoParte4;
 
+    [Header("Inicio de Misión")]
+    public DialogueNode nodoTextoMision;
+
     
     void Start()
     {
@@ -113,6 +116,11 @@ public class CinematicaInicial : MonoBehaviour
         franciscoNPC.SetActive(false);
 
         transformMartin.localScale = escalaOriginalMartin;
+        if (nodoTextoMision != null)
+        {
+            dialogueManager.IniciarDialogo(nodoTextoMision);
+            yield return new WaitUntil(() => clickManager.enabled == true);
+        }
 
         //PlayerPrefs.SetInt("IntroVista", 1); 
        // PlayerPrefs.Save();

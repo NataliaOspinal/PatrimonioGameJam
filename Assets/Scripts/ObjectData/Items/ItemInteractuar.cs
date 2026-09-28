@@ -10,6 +10,9 @@ public class ItemInteractuar : MonoBehaviour
     public InventoryManager inventoryManager;
     public DialogueManager dialogueManager;
 
+    [Header("Conexión con Cinemáticas")]
+    public GameObject cinematica2;
+
     // Sistema de diálogo d chill
     private string[] respuestasGenericas = {
         "No creo que tenga sentido usar eso ahí.",
@@ -123,6 +126,12 @@ public class ItemInteractuar : MonoBehaviour
 
     private IEnumerator RutinaUsarItem(InventorySlot slotUsado, ItemData itemDestino)
     {
+        if (inventoryManager != null)
+        {
+    
+            inventoryManager.ToggleInventario(); 
+        }
+
         Vector2 destino = itemDestino.goToPoint != null ? itemDestino.goToPoint.position : itemDestino.transform.position;
         yield return StartCoroutine(clickManager.MoveToPoint(destino));
 
@@ -140,6 +149,12 @@ public class ItemInteractuar : MonoBehaviour
                 if (objetosEmpacados == 3)
                 {
                     dialogueManager.IniciarDialogoSimple("Maleta lista...", PersonajeHablando.Martin);
+
+                    if (cinematica2 != null)
+                    {
+                        cinematica2.SetActive(true);
+                    }
+                
                 }
                 else
                 {

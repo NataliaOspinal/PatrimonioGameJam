@@ -6,7 +6,8 @@ public enum PersonajeHablando
 { 
     Ninguno, 
     Martin, 
-    Francisco 
+    Francisco,
+    Mariana 
 }
 
 // se puede crear los nodos con click derecho en una carpeta 
