@@ -9,6 +9,7 @@ public class ItemInteractuar : MonoBehaviour
     public InteractionMenu interactionMenu;
     public InventoryManager inventoryManager;
     public DialogueManager dialogueManager;
+    public ObjectiveManager objectiveManager;
     public InteriorBaul pantallaBaul;
 
     [Header("Conexión con Cinemáticas")]
@@ -134,8 +135,7 @@ public class ItemInteractuar : MonoBehaviour
     {
         if (inventoryManager != null)
         {
-    
-            inventoryManager.ToggleInventario(); 
+            inventoryManager.ToggleInventario();
         }
 
         Vector2 destino = itemDestino.goToPoint != null ? itemDestino.goToPoint.position : itemDestino.transform.position;
@@ -154,13 +154,13 @@ public class ItemInteractuar : MonoBehaviour
 
                 if (objetosEmpacados == 3)
                 {
-                    dialogueManager.IniciarDialogoSimple("Maleta lista...", PersonajeHablando.Martin);
+                    dialogueManager.IniciarDialogoSimple("¡Perfecto! Ya guardé los documentos, el libro y el abrigo. Estoy listo para irme.", PersonajeHablando.Martin);
+                    if (objectiveManager != null) objectiveManager.CompletarObjetivo();
 
                     if (cinematica2 != null)
                     {
                         cinematica2.SetActive(true);
                     }
-                
                 }
                 else
                 {

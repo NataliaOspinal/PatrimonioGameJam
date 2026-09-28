@@ -6,6 +6,7 @@ public class CinematicaInicial : MonoBehaviour
     [Header("Managers")]
     public DialogueManager dialogueManager;
     public ClickManager clickManager;
+    public ObjectiveManager objectiveManager;
 
     [Header("Actores y Posiciones")]
     public GameObject franciscoNPC;
@@ -122,10 +123,11 @@ public class CinematicaInicial : MonoBehaviour
             yield return new WaitUntil(() => clickManager.enabled == true);
         }
 
-        //PlayerPrefs.SetInt("IntroVista", 1); 
-       // PlayerPrefs.Save();
-
         clickManager.enabled = true;
+        if (objectiveManager != null)
+        {
+            objectiveManager.MostrarObjetivo("Preparar el equipaje");
+        }
     }
 
     private void ForzarMirada(GameObject personaje, bool mirarDerecha, bool esElPadre)
