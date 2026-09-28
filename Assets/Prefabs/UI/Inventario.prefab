@@ -476,7 +476,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 0
+  m_PresetInfoIsWorld: 1
 --- !u!114 &6684265410437108975
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -524,6 +524,7 @@ MonoBehaviour:
   textoNombre: {fileID: 684270497960107848}
   textoDescripcion: {fileID: 1690807394275813605}
   offsetTooltip: {x: 50, y: -50}
+  itemInteractive: {fileID: 0}
 --- !u!1 &3795724675226288490
 GameObject:
   m_ObjectHideFlags: 0

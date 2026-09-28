@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DialogueNode
   hablante: 3
   fuenteEspecial: {fileID: 0}
-  textoNPC: Parte de la historia
+  textoNPC: Parte de la historia.
   siguienteNodoLineal: {fileID: 0}
   opciones: []

@@ -24,6 +24,7 @@ public class CinematicaSegunda : MonoBehaviour
     public Transform puntoMartinBaul; // donde camina Martín para ver el baúl
     public Transform puntoSalida;
     public float velocidadCaminar = 3f;
+    public float velocidadCorrerAyudante = 7f;
 
     [Header("Utilería (El Baúl)")]
     public GameObject baulEnManoAyudante;
@@ -70,7 +71,7 @@ public class CinematicaSegunda : MonoBehaviour
         yield return new WaitForSeconds(0.3f);
 
         
-        yield return StartCoroutine(CaminarActor(ayudanteNPC, animAyudante, puntoSalida, true));
+        yield return StartCoroutine(CaminarActor(ayudanteNPC, animAyudante, puntoSalida, true, velocidadCorrerAyudante));
         ayudanteNPC.SetActive(false);
 
         
@@ -106,8 +107,8 @@ public class CinematicaSegunda : MonoBehaviour
         clickManager.enabled = true;
     }
 
-    
-    private IEnumerator CaminarActor(GameObject actor, Animator anim, Transform destino, bool spriteInvertidoBase)
+
+    private IEnumerator CaminarActor(GameObject actor, Animator anim, Transform destino, bool spriteInvertidoBase, float velOverride = -1f)
     {
         if (anim != null) anim.SetBool("isWalking", true);
 
@@ -119,9 +120,12 @@ public class CinematicaSegunda : MonoBehaviour
             actor.transform.localScale = new Vector3(escalaX, actor.transform.localScale.y, actor.transform.localScale.z);
         }
 
+        float velocidadAplicada = velOverride > 0 ? velOverride : velocidadCaminar;
+
         while (Vector2.Distance(actor.transform.position, destino.position) > 0.05f)
         {
-            actor.transform.position = Vector2.MoveTowards(actor.transform.position, destino.position, velocidadCaminar * Time.deltaTime);
+            Vector3 posDestinoSegura = new Vector3(destino.position.x, destino.position.y, actor.transform.position.z);
+            actor.transform.position = Vector3.MoveTowards(actor.transform.position, posDestinoSegura, velocidadAplicada * Time.deltaTime);
             yield return null;
         }
 
