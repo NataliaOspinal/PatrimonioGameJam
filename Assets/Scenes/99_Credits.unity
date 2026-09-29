@@ -770,7 +770,7 @@ MonoBehaviour:
     m_Bits: 1
   m_VolumeTrigger: {fileID: 0}
   m_VolumeFrameworkUpdateModeOption: 2
-  m_RenderPostProcessing: 0
+  m_RenderPostProcessing: 1
   m_Antialiasing: 0
   m_AntialiasingQuality: 2
   m_StopNaN: 0
@@ -1116,7 +1116,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -139.48138, y: 0, z: -394.21704, w: 0}
+  m_margin: {x: -139.48138, y: -27.946129, z: -394.21704, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -1844,6 +1844,63 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5149552054008013713, guid: 26258e7ef06587047b75177f3aea0dc4, type: 3}
   m_PrefabInstance: {fileID: 1831394303}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &479667903
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1871518450349253701, guid: 4908daa6f5e20104a9cb800902d87718, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.6247
+      objectReference: {fileID: 0}
+    - target: {fileID: 1871518450349253701, guid: 4908daa6f5e20104a9cb800902d87718, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.28626
+      objectReference: {fileID: 0}
+    - target: {fileID: 1871518450349253701, guid: 4908daa6f5e20104a9cb800902d87718, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1871518450349253701, guid: 4908daa6f5e20104a9cb800902d87718, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1871518450349253701, guid: 4908daa6f5e20104a9cb800902d87718, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1871518450349253701, guid: 4908daa6f5e20104a9cb800902d87718, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1871518450349253701, guid: 4908daa6f5e20104a9cb800902d87718, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1871518450349253701, guid: 4908daa6f5e20104a9cb800902d87718, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1871518450349253701, guid: 4908daa6f5e20104a9cb800902d87718, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1871518450349253701, guid: 4908daa6f5e20104a9cb800902d87718, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5324332791094043848, guid: 4908daa6f5e20104a9cb800902d87718, type: 3}
+      propertyPath: m_Name
+      value: Filtro
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4908daa6f5e20104a9cb800902d87718, type: 3}
 --- !u!1 &576794826
 GameObject:
   m_ObjectHideFlags: 0
@@ -3462,9 +3519,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Liz Pineda
-
-    Natalia "uwauwauu" Ospinal'
+  m_text: "Liz Pineda\nNatalia \"uwauwauu\" Ospinal\nNestor \u201CAats\u201D Joussef
+    (JR.)"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 21176e3733ade284684de05ff2ea4aeb, type: 2}
   m_sharedMaterial: {fileID: 5174167654414483513, guid: 21176e3733ade284684de05ff2ea4aeb, type: 2}
@@ -3530,7 +3586,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -139.48138, y: 0, z: -404.21948, w: 0}
+  m_margin: {x: -139.48138, y: 0, z: -404.21948, w: -79.63913}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -5743,3 +5799,4 @@ SceneRoots:
   - {fileID: 1671387362}
   - {fileID: 576794829}
   - {fileID: 199760507}
+  - {fileID: 479667903}
