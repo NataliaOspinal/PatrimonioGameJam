@@ -317,6 +317,10 @@ PrefabInstance:
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[4].y
       value: -11.6082115
       objectReference: {fileID: 0}
+    - target: {fileID: 1714838779117624648, guid: 260caaecfc164db4fbcde1d5a25d6dfb, type: 3}
+      propertyPath: tamanoCamara
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 2112798829872135973, guid: 260caaecfc164db4fbcde1d5a25d6dfb, type: 3}
       propertyPath: m_LocalPosition.x
       value: 13.03

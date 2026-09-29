@@ -25,10 +25,10 @@ public class ItemData : MonoBehaviour
     [TextArea(2, 4)] // multilinea
     public string descripcionObjeto;
 
-
     [Header("Sistema de Diálogo")]
     public DialogueNode nodoDialogoVer;    
     public DialogueNode nodoDialogoHablar;
+    public DialogueNode nodoDialogoTocar;
 
     void Start()
     {

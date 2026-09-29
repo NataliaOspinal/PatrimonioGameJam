@@ -512,6 +512,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -8653719598885068355, guid: 54feea7a51f3fb6418749945677fa9b1, type: 3}
       insertIndex: -1
       addedObject: {fileID: 3525601972493090238}
+    - targetCorrespondingSourceObject: {fileID: -8653719598885068355, guid: 54feea7a51f3fb6418749945677fa9b1, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -2781221272326427791}
   m_SourcePrefab: {fileID: 4843985084834002234, guid: 54feea7a51f3fb6418749945677fa9b1, type: 3}
 --- !u!4 &1736366057218619376 stripped
 Transform:
@@ -577,6 +580,27 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &-2781221272326427791
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4935342558963042581}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9d4a1ab66c72f6428834949e3887bb4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ItemData
+  textoHoverFlotante: {fileID: 0}
+  categoria: 2
+  goToPoint: {fileID: 0}
+  idItem: Vendedora
+  iconoInventario: {fileID: 0}
+  nombreObjeto: 
+  descripcionObjeto: 
+  nodoDialogoVer: {fileID: 0}
+  nodoDialogoHablar: {fileID: 0}
 --- !u!4 &6103998434859503990 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -7552582706839291426, guid: 54feea7a51f3fb6418749945677fa9b1, type: 3}

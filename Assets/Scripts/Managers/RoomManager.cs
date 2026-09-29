@@ -106,9 +106,11 @@ public class RoomManager : MonoBehaviour
         if (camaraVirtual != null)
         {
             camaraVirtual.gameObject.SetActive(false);
-            
+
             camaraVirtual.transform.position = new Vector3(player.position.x, player.position.y, camaraVirtual.transform.position.z);
-            
+
+            camaraVirtual.Lens.OrthographicSize = data.tamanoCamara;
+
             camaraVirtual.gameObject.SetActive(true);
         }
     }
