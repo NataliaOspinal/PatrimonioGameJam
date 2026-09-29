@@ -527,7 +527,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 1
+  m_PresetInfoIsWorld: 0
 --- !u!114 &6684265410437108975
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -810,11 +810,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InteractionMenu
   itemInteractive: {fileID: 0}
+  radioExpansion: 80
+  tiempoAnimacion: 0.4
+  anguloArco: 120
   btnVer: {fileID: 1060592954048815307}
   btnTocar: {fileID: 8493733340183489880}
   btnHablar: {fileID: 8038650757687780072}
   btnEntrarSalir: {fileID: 0}
-  allButtons: []
+  allButtons:
+  - {fileID: 8276544440493737536}
+  - {fileID: 167203769445178303}
+  - {fileID: 4619636332461677520}
   normalColor: {r: 1, g: 1, b: 1, a: 1}
   shadowColor: {r: 0.4, g: 0.4, b: 0.4, a: 1}
 --- !u!1 &3303007556132919870

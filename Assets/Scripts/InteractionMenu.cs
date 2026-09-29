@@ -1,10 +1,19 @@
 using UnityEngine;
-using UnityEngine.UI; // Necesario para los colores del hover
+using UnityEngine.UI; 
+using System.Collections.Generic; 
+using DG.Tweening;
 
 public class InteractionMenu : MonoBehaviour
 {
     public ItemInteractuar itemInteractive;
     private ItemData currentItem;
+    public float alturaSobreObjeto = 0.5f;
+
+    [Header("Animación de Baraja Radial")]
+    public float radioExpansion = 120f; 
+    public float tiempoAnimacion = 0.4f;
+    [Range(0f, 180f)]
+    public float anguloArco = 120f;
 
     // Botones del menú radial
     public GameObject btnVer;
@@ -45,17 +54,80 @@ public class InteractionMenu : MonoBehaviour
                 break;
         }
 
-        Vector3 nuevaPosicion = item.transform.position + new Vector3(0, 1.5f, 0);
+        Vector3 nuevaPosicion = item.transform.position + new Vector3(0, alturaSobreObjeto, 0);
         nuevaPosicion.z = 0f;
         transform.position = nuevaPosicion;
 
         gameObject.SetActive(true);
         ResetButtons(); // Asegura que ningún botón empiece oscurecido
+
+        AnimarAperturaRadial();
+    }
+
+    private void AnimarAperturaRadial()
+    {
+        List<RectTransform> botonesActivos = new List<RectTransform>();
+        
+        if (btnVer != null && btnVer.activeSelf) botonesActivos.Add(btnVer.GetComponent<RectTransform>());
+        if (btnTocar != null && btnTocar.activeSelf) botonesActivos.Add(btnTocar.GetComponent<RectTransform>());
+        if (btnHablar != null && btnHablar.activeSelf) botonesActivos.Add(btnHablar.GetComponent<RectTransform>());
+        if (btnEntrarSalir != null && btnEntrarSalir.activeSelf) botonesActivos.Add(btnEntrarSalir.GetComponent<RectTransform>());
+
+        int cantidad = botonesActivos.Count;
+        if (cantidad == 0) return;
+
+        for (int i = 0; i < cantidad; i++)
+        {
+            RectTransform btn = botonesActivos[i];
+
+            btn.anchoredPosition = Vector2.zero;
+            btn.localScale = Vector3.zero;
+
+            float angulo = 90f; 
+
+            if (cantidad > 1)
+            {
+                float anguloMitad = anguloArco / 2f;
+                float anguloInicio = 90f + anguloMitad; 
+                float pasoGrados = anguloArco / (cantidad - 1); 
+                
+                angulo = anguloInicio - (i * pasoGrados);
+            }
+
+            float radianes = angulo * Mathf.Deg2Rad;
+            float metaX = Mathf.Cos(radianes) * radioExpansion;
+            float metaY = Mathf.Sin(radianes) * radioExpansion;
+
+            btn.DOAnchorPos(new Vector2(metaX, metaY), tiempoAnimacion).SetEase(Ease.OutBack);
+            btn.DOScale(Vector3.one, tiempoAnimacion).SetEase(Ease.OutBack);
+        }
     }
 
     public void HideMenu()
     {
-        gameObject.SetActive(false);
+        List<GameObject> todos = new List<GameObject> { btnVer, btnTocar, btnHablar, btnEntrarSalir };
+        bool hayActivos = false;
+
+        foreach (GameObject btnObj in todos)
+        {
+            if (btnObj != null && btnObj.activeSelf)
+            {
+                hayActivos = true;
+                RectTransform btn = btnObj.GetComponent<RectTransform>();
+                
+                btn.DOAnchorPos(Vector2.zero, tiempoAnimacion / 2f).SetEase(Ease.InBack);
+                btn.DOScale(Vector3.zero, tiempoAnimacion / 2f).SetEase(Ease.InBack);
+            }
+        }
+
+        if (hayActivos)
+        {
+            DOVirtual.DelayedCall(tiempoAnimacion / 2f, () => gameObject.SetActive(false));
+        }
+        else
+        {
+            gameObject.SetActive(false);
+        }
     }
 
     // Hover de los botones del menú radial
