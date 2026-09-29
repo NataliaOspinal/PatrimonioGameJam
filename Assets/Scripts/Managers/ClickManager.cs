@@ -149,7 +149,7 @@ public class ClickManager : MonoBehaviour
         if (walkableArea != null) safePoint = walkableArea.ClosestPoint(safePoint);
 
         yield return StartCoroutine(MoveToPoint(safePoint));
-        roomManager.CambiarHabitacion(puerta.habitacionDestino, puerta.puntoDeAparicion);
+        roomManager.ProcesarPuerta(puerta);
     }
 
     public IEnumerator MoveToPoint(Vector2 point)

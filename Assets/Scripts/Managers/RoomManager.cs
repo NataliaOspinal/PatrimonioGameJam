@@ -3,6 +3,7 @@ using Unity.Cinemachine;
 using DG.Tweening;
 using UnityEngine.UI;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class RoomManager : MonoBehaviour
 {
@@ -40,6 +41,17 @@ public class RoomManager : MonoBehaviour
         }
     }
 
+    public void ProcesarPuerta(Doors puerta)
+    {
+        if (puerta.cambiaDeEscena)
+        {
+            StartCoroutine(RutinaCambiarEscena(puerta.nombreEscenaDestino, puerta.nombrePuntoAparicion));
+        }
+        else
+        {
+            CambiarHabitacion(puerta.habitacionDestino, puerta.puntoDeAparicion);
+        }
+    }
     public void CambiarHabitacion(GameObject nuevaHabitacion, Transform nuevoPuntoAparicion)
     {
        
@@ -98,6 +110,51 @@ public class RoomManager : MonoBehaviour
             camaraVirtual.transform.position = new Vector3(player.position.x, player.position.y, camaraVirtual.transform.position.z);
             
             camaraVirtual.gameObject.SetActive(true);
+        }
+    }
+
+    private IEnumerator RutinaCambiarEscena(string nombreEscena, string nombrePuntoAparicion)
+    {
+        if (pantallaNegra != null)
+        {
+            pantallaNegra.raycastTarget = true;
+            pantallaNegra.DOFade(1f, tiempoFade);
+            yield return new WaitForSeconds(tiempoFade);
+        }
+
+        //Carga la nueva escena
+        AsyncOperation operacion = SceneManager.LoadSceneAsync(nombreEscena);
+        while (!operacion.isDone)
+        {
+            yield return null;
+        }
+
+        // Busca el punto exacto por su nombre único
+        GameObject spawn = GameObject.Find(nombrePuntoAparicion);
+
+        if (spawn != null)
+        {
+            // Mueve a Martín a esa posición
+            player.position = new Vector3(spawn.transform.position.x, spawn.transform.position.y, 0f);
+            GameObject nuevaHabitacion = spawn.transform.parent.gameObject;
+
+            // Activamos la sala correcta
+            nuevaHabitacion.SetActive(true);
+            habitacionActual = nuevaHabitacion;
+
+            // Llamamos a ConfigurarSala (que buscará el RoomData entre los hijos de esta sala)
+            ConfigurarSala(habitacionActual);
+        }
+        else
+        {
+            Debug.LogError("No se encontró el punto de aparición: " + nombrePuntoAparicion + ". Revisa las mayúsculas.");
+        }
+
+        if (pantallaNegra != null)
+        {
+            pantallaNegra.DOFade(0f, tiempoFade).OnComplete(() => {
+                pantallaNegra.raycastTarget = false;
+            });
         }
     }
 }
