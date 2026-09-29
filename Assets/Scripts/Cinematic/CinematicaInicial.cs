@@ -37,6 +37,11 @@ public class CinematicaInicial : MonoBehaviour
     
     void Start()
     {
+        if (AudioManager.instance != null)
+        {
+            AudioManager.instance.ReproducirBGM("tema lima");
+        }
+        
         if (clickManager == null) clickManager = FindFirstObjectByType<ClickManager>();
         if (dialogueManager == null) dialogueManager = FindFirstObjectByType<DialogueManager>();
 

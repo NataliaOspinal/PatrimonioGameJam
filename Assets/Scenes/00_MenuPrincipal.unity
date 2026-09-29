@@ -3816,6 +3816,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5104719052687109617, guid: 5de8598ef1ed888468b4da70d8246b28, type: 3}
+      propertyPath: efectosSFX.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5104719052687109617, guid: 5de8598ef1ed888468b4da70d8246b28, type: 3}
       propertyPath: pistasBGM.Array.data[0].clip
       value: 
       objectReference: {fileID: 8300000, guid: 218647f364efdcd4bbcaf4c2153002d4, type: 3}
@@ -3824,12 +3828,20 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8300000, guid: 218647f364efdcd4bbcaf4c2153002d4, type: 3}
     - target: {fileID: 5104719052687109617, guid: 5de8598ef1ed888468b4da70d8246b28, type: 3}
+      propertyPath: efectosSFX.Array.data[0].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: fbe303f696cf8f443b787352ba527818, type: 3}
+    - target: {fileID: 5104719052687109617, guid: 5de8598ef1ed888468b4da70d8246b28, type: 3}
       propertyPath: pistasBGM.Array.data[0].nombre
       value: tema lima
       objectReference: {fileID: 0}
     - target: {fileID: 5104719052687109617, guid: 5de8598ef1ed888468b4da70d8246b28, type: 3}
       propertyPath: pistasBGM.Array.data[1].nombre
-      value: Creditos
+      value: tema lima
+      objectReference: {fileID: 0}
+    - target: {fileID: 5104719052687109617, guid: 5de8598ef1ed888468b4da70d8246b28, type: 3}
+      propertyPath: efectosSFX.Array.data[0].nombre
+      value: paper
       objectReference: {fileID: 0}
     - target: {fileID: 5231574706043292853, guid: 5de8598ef1ed888468b4da70d8246b28, type: 3}
       propertyPath: m_Resource
