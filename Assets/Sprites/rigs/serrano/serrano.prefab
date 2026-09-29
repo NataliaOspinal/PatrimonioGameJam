@@ -417,6 +417,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -8653719598885068355, guid: a5978cb444d98f148bd3fa55be48dd97, type: 3}
       insertIndex: -1
       addedObject: {fileID: 709395377962595904}
+    - targetCorrespondingSourceObject: {fileID: -8653719598885068355, guid: a5978cb444d98f148bd3fa55be48dd97, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7067479274428272723}
   m_SourcePrefab: {fileID: 4843985084834002234, guid: a5978cb444d98f148bd3fa55be48dd97, type: 3}
 --- !u!4 &512842522688089114 stripped
 Transform:
@@ -460,6 +463,28 @@ MonoBehaviour:
     showGizmo: 1
   - color: {r: 0, g: 1, b: 0, a: 1}
     showGizmo: 1
+--- !u!114 &7067479274428272723
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7648496551893492349}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9d4a1ab66c72f6428834949e3887bb4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ItemData
+  textoHoverFlotante: {fileID: 0}
+  categoria: 2
+  goToPoint: {fileID: 0}
+  idItem: 
+  iconoInventario: {fileID: 0}
+  nombreObjeto: 
+  descripcionObjeto: 
+  nodoDialogoVer: {fileID: 0}
+  nodoDialogoHablar: {fileID: 0}
+  nodoDialogoTocar: {fileID: 0}
 --- !u!4 &8690727000978013773 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1538136372295466381, guid: a5978cb444d98f148bd3fa55be48dd97, type: 3}

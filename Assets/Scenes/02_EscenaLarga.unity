@@ -333,6 +333,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SalaExterna
       objectReference: {fileID: 0}
+    - target: {fileID: 3878756477599505753, guid: 260caaecfc164db4fbcde1d5a25d6dfb, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5165417498084226816, guid: 260caaecfc164db4fbcde1d5a25d6dfb, type: 3}
       propertyPath: m_LocalPosition.x
       value: 2.44418

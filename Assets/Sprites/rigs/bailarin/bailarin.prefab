@@ -731,6 +731,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -8653719598885068355, guid: 73f0f8dbb6664c549afb752436bafbd9, type: 3}
       insertIndex: -1
       addedObject: {fileID: 3944790073099576289}
+    - targetCorrespondingSourceObject: {fileID: -8653719598885068355, guid: 73f0f8dbb6664c549afb752436bafbd9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6720529261782974868}
+    - targetCorrespondingSourceObject: {fileID: -8653719598885068355, guid: 73f0f8dbb6664c549afb752436bafbd9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6998964133511221967}
   m_SourcePrefab: {fileID: 4843985084834002234, guid: 73f0f8dbb6664c549afb752436bafbd9, type: 3}
 --- !u!4 &89863686152108766 stripped
 Transform:
@@ -775,6 +781,50 @@ MonoBehaviour:
     showGizmo: 1
   - color: {r: 0, g: 1, b: 0, a: 1}
     showGizmo: 1
+--- !u!95 &6720529261782974868
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1294603882408108733}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: aa955a7d58278d24080016b9564cff62, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &6998964133511221967
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1294603882408108733}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9d4a1ab66c72f6428834949e3887bb4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ItemData
+  textoHoverFlotante: {fileID: 0}
+  categoria: 0
+  goToPoint: {fileID: 0}
+  idItem: 
+  iconoInventario: {fileID: 0}
+  nombreObjeto: 
+  descripcionObjeto: 
+  nodoDialogoVer: {fileID: 0}
+  nodoDialogoHablar: {fileID: 0}
+  nodoDialogoTocar: {fileID: 0}
 --- !u!4 &1315720131925354130 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 311580695235782034, guid: 73f0f8dbb6664c549afb752436bafbd9, type: 3}
