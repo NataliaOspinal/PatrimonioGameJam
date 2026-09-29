@@ -7,7 +7,8 @@ public enum PersonajeHablando
     Ninguno, 
     Martin, 
     Francisco,
-    Mariana 
+    Mariana,
+    Apostador
 }
 
 // se puede crear los nodos con click derecho en una carpeta 
