@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e955c488978417944ab9ff8b48ca9233, type: 3}
-  m_Name: DialogB3.6
+  m_Name: DialogB3.7
   m_EditorClassIdentifier: Assembly-CSharp::DialogueNode
-  hablante: 3
+  hablante: 1
   fuenteEspecial: {fileID: 0}
-  textoNPC: "Cambi\xF3 de tema varias veces."
-  siguienteNodoLineal: {fileID: 11400000, guid: 160da64a124aab9479411e9830bea25b, type: 2}
+  textoNPC: Muy propio de ella, jaja
+  siguienteNodoLineal: {fileID: 0}
   opciones: []

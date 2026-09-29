@@ -6,6 +6,8 @@ public class InteriorBaul : MonoBehaviour
 {
     // Conexiones con otros componentes
     public DialogueManager dialogueManager;
+    public ClickManager clickManager;
+    public ObjectiveManager objectiveManager;
     public CanvasGroup panelGroup;
 
     // Nodos de diálogo para cada objeto
@@ -62,8 +64,11 @@ public class InteriorBaul : MonoBehaviour
 
     private IEnumerator CerrarConFadeOut()
     {
-        // 2 segundos antes de cerrar
-        yield return new WaitForSeconds(2f);
+        // Esperamos a que el ClickManager vuelva a activarse (indica si el diálogo ha terminado)
+        yield return new WaitUntil(() => clickManager != null && clickManager.enabled == true);
+
+        // Espera antes del fade out
+        yield return new WaitForSeconds(0.5f);
 
         float duracionFade = 1.5f;
         float tiempo = 0;
@@ -76,5 +81,11 @@ public class InteriorBaul : MonoBehaviour
         }
 
         gameObject.SetActive(false);
+
+        // Actualizamos la misión al terminar el desvanecimiento
+        if (objectiveManager != null)
+        {
+            objectiveManager.MostrarObjetivo("Examinar la carta de Isabel");
+        }
     }
 }

@@ -11,6 +11,7 @@ public class ItemInteractuar : MonoBehaviour
     public DialogueManager dialogueManager;
     public ObjectiveManager objectiveManager;
     public InteriorBaul pantallaBaul;
+    public GameObject panelCartaVista;
 
     [Header("Conexión con Cinemáticas")]
     public GameObject cinematica2;
@@ -82,6 +83,11 @@ public class ItemInteractuar : MonoBehaviour
                 {
                     if (pantallaBaul != null) pantallaBaul.IniciarExploracion();
                     break; // Cortamos aquí para que no siga con el código de abajo
+                }
+                if (item.idItem == "Carta")
+                {
+                    if (panelCartaVista != null) panelCartaVista.SetActive(true);
+                    break;
                 }
                 // Si tiene un nodo de diálogo complejo lo usa, si no, usa la descripción simple
                 if (item.nodoDialogoVer != null)
