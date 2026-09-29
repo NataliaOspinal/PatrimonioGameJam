@@ -1228,13 +1228,29 @@ PrefabInstance:
       value: 1080
       objectReference: {fileID: 0}
     - target: {fileID: 4034025748288579621, guid: 06efa8de47c0cbb419db95b78bac4f0a, type: 3}
+      propertyPath: puertaSalida
+      value: 
+      objectReference: {fileID: 998531005}
+    - target: {fileID: 4034025748288579621, guid: 06efa8de47c0cbb419db95b78bac4f0a, type: 3}
       propertyPath: cartaEnEscena
       value: 
       objectReference: {fileID: 1932680123}
     - target: {fileID: 4034025748288579621, guid: 06efa8de47c0cbb419db95b78bac4f0a, type: 3}
+      propertyPath: dialogueManager
+      value: 
+      objectReference: {fileID: 549105791}
+    - target: {fileID: 4034025748288579621, guid: 06efa8de47c0cbb419db95b78bac4f0a, type: 3}
       propertyPath: inventoryManager
       value: 
       objectReference: {fileID: 2145789920}
+    - target: {fileID: 4034025748288579621, guid: 06efa8de47c0cbb419db95b78bac4f0a, type: 3}
+      propertyPath: objectiveManager
+      value: 
+      objectReference: {fileID: 786357984}
+    - target: {fileID: 4034025748288579621, guid: 06efa8de47c0cbb419db95b78bac4f0a, type: 3}
+      propertyPath: dialogoFinalCarta
+      value: 
+      objectReference: {fileID: 11400000, guid: 51c26ef188de5df448699c262521d9c2, type: 2}
     - target: {fileID: 5908359955291659106, guid: 06efa8de47c0cbb419db95b78bac4f0a, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -1641,6 +1657,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4159136fca0a3640aba665422aca684, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InteriorBaul
+--- !u!1 &998531005 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3966089524015108117, guid: b64d73d1b9b065b46b26066c333f8fdf, type: 3}
+  m_PrefabInstance: {fileID: 1474799572}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1004977112 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6730694702133788112, guid: 2737a559ba07c9d439c0853a43658d0c, type: 3}
@@ -2270,6 +2291,26 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2055489025060465373, guid: b64d73d1b9b065b46b26066c333f8fdf, type: 3}
+      propertyPath: m_Color.b
+      value: 0.05047346
+      objectReference: {fileID: 0}
+    - target: {fileID: 2055489025060465373, guid: b64d73d1b9b065b46b26066c333f8fdf, type: 3}
+      propertyPath: m_Color.g
+      value: 0.23481767
+      objectReference: {fileID: 0}
+    - target: {fileID: 2055489025060465373, guid: b64d73d1b9b065b46b26066c333f8fdf, type: 3}
+      propertyPath: m_Color.r
+      value: 0.5245282
+      objectReference: {fileID: 0}
+    - target: {fileID: 2112798829872135973, guid: b64d73d1b9b065b46b26066c333f8fdf, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 29.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2112798829872135973, guid: b64d73d1b9b065b46b26066c333f8fdf, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -3.3
+      objectReference: {fileID: 0}
     - target: {fileID: 2156792068056065872, guid: b64d73d1b9b065b46b26066c333f8fdf, type: 3}
       propertyPath: m_LocalPosition.y
       value: -11.8
@@ -2362,6 +2403,10 @@ PrefabInstance:
     - target: {fileID: 3878756477599505753, guid: b64d73d1b9b065b46b26066c333f8fdf, type: 3}
       propertyPath: m_Name
       value: SalaInicial
+      objectReference: {fileID: 0}
+    - target: {fileID: 3966089524015108117, guid: b64d73d1b9b065b46b26066c333f8fdf, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4067891737145279319, guid: b64d73d1b9b065b46b26066c333f8fdf, type: 3}
       propertyPath: m_SortingOrder
@@ -2511,6 +2556,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: -1.87
       objectReference: {fileID: 0}
+    - target: {fileID: 6164936033319988500, guid: b64d73d1b9b065b46b26066c333f8fdf, type: 3}
+      propertyPath: habitacionDestino
+      value: 
+      objectReference: {fileID: 3878756477599505753, guid: 260caaecfc164db4fbcde1d5a25d6dfb, type: 3}
     - target: {fileID: 6280976971598948903, guid: b64d73d1b9b065b46b26066c333f8fdf, type: 3}
       propertyPath: m_LocalRotation.w
       value: 0.9619036

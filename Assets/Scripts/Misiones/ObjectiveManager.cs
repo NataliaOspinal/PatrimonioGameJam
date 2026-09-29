@@ -48,4 +48,24 @@ public class ObjectiveManager : MonoBehaviour
             textoObjetivos.text = "<b>Objetivos:</b>\n- " + objetivoActual;
         }
     }
+
+    // Tacha el objetivo actual, espera 2 segundos, y escribe el nuevo
+    public void CambiarObjetivoSecuencial(string nuevoObjetivo)
+    {
+        StartCoroutine(RutinaCambiarSecuencial(nuevoObjetivo));
+    }
+
+    private IEnumerator RutinaCambiarSecuencial(string nuevoObjetivo)
+    {
+        // Tacha el objetivo anterior sooolo si existe
+        if (!string.IsNullOrEmpty(objetivoActual))
+        {
+            textoObjetivos.text = "<b>Objetivos:</b>\n- <s>" + objetivoActual + "</s>";
+            yield return new WaitForSeconds(2.5f);
+        }
+
+        // Asigna y muestra el nuevo
+        objetivoActual = nuevoObjetivo;
+        ActualizarUI();
+    }
 }
