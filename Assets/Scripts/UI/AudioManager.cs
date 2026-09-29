@@ -1,9 +1,13 @@
 using UnityEngine;
 using System; 
+using UnityEngine.Audio;
 
 public class AudioManager : MonoBehaviour
 {
     public static AudioManager instance;
+    [Header("Conexión con el Mixer")]
+    public AudioMixer mainMixer;
+
 
     [Header("Reproductores")]
     public AudioSource bgmSource; 
@@ -24,6 +28,30 @@ public class AudioManager : MonoBehaviour
         else
         {
             Destroy(gameObject); 
+        }
+    }
+
+    public void CambiarVolumenBGM(float valorSlider)
+    {
+        if (valorSlider <= 0.0001f) 
+        {
+            mainMixer.SetFloat("volBGM", -80f);
+        }
+        else
+        {
+            mainMixer.SetFloat("volBGM", Mathf.Log10(valorSlider) * 20f);
+        }
+    }
+
+    public void CambiarVolumenSFX(float valorSlider)
+    {
+        if (valorSlider <= 0.0001f) 
+        {
+            mainMixer.SetFloat("volSFX", -80f);
+        }
+        else
+        {
+            mainMixer.SetFloat("volSFX", Mathf.Log10(valorSlider) * 20f);
         }
     }
 
