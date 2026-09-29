@@ -78,7 +78,7 @@ public class ItemInteractuar : MonoBehaviour
         switch (accion)
         {
             case "Ver":
-                if (item.idItem == "BaulExplorable")
+                if (item.idItem == "Baul")
                 {
                     if (pantallaBaul != null) pantallaBaul.IniciarExploracion();
                     break; // Cortamos aquí para que no siga con el código de abajo
