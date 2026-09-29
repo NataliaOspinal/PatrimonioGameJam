@@ -101,7 +101,7 @@ public class ItemInteractuar : MonoBehaviour
                 break;
 
             case "Tocar":
-                if (item.categoria == CategoriaInteraccion.SoloVer || item.categoria == CategoriaInteraccion.NPC)
+                if (item.categoria == CategoriaInteraccion.SoloVer)
                 {
                     dialogueManager.IniciarDialogoSimple("No puedo recoger esto.", PersonajeHablando.Martin);
                 }
