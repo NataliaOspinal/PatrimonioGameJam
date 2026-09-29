@@ -22,6 +22,11 @@ public class RoomManager : MonoBehaviour
 
     void Start()
     {
+        if (AudioManager.instance != null)
+        {
+            AudioManager.instance.ReproducirBGM("tema lima");
+        }
+
         if (pantallaNegra != null)
         {
             pantallaNegra.color = new Color(0, 0, 0, 0);

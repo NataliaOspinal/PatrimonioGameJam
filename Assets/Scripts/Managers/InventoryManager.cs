@@ -14,17 +14,17 @@ public class InventoryManager : MonoBehaviour
     private bool estaAbierto = false;
     private Coroutine animacionActual;
 
-    // Slots del inventario y el ícono de arrastre
+    // Slots del inventario y el ï¿½cono de arrastre
     public InventorySlot[] slots;
     public Image iconoArrastre;
 
-    // Tooltip para mostrar información del item
+    // Tooltip para mostrar informaciï¿½n del item
     public GameObject panelTooltip; // Imagen
-    public TextMeshProUGUI textoNombre; // El texto de título
-    public TextMeshProUGUI textoDescripcion; // El texto de la descripción
+    public TextMeshProUGUI textoNombre; // El texto de tï¿½tulo
+    public TextMeshProUGUI textoDescripcion; // El texto de la descripciï¿½n
     public Vector2 offsetTooltip = new Vector2(50f, -50f);
 
-    // Conexión con itemInteractive
+    // Conexiï¿½n con itemInteractive
     public ItemInteractuar itemInteractive;
 
     void Start()
@@ -40,6 +40,11 @@ public class InventoryManager : MonoBehaviour
 
     public void ToggleInventario()
     {
+        if (AudioManager.instance != null)
+        {
+            AudioManager.instance.ReproducirSFX("paper");
+        }
+
         estaAbierto = !estaAbierto;
         if (animacionActual != null) StopCoroutine(animacionActual);
 
@@ -58,12 +63,12 @@ public class InventoryManager : MonoBehaviour
         panelInventario.anchoredPosition = destino;
     }
 
-    // Recibe data del item y lo agrega al primer slot vacío de izquierda a derecha
+    // Recibe data del item y lo agrega al primer slot vacï¿½o de izquierda a derecha
     public bool AgregarItem(ItemData item)
     {
         for (int i = 0; i < slots.Length; i++)
         {
-            // Si encuentra una casilla vacía, pone el objeto ahí y corta la función
+            // Si encuentra una casilla vacï¿½a, pone el objeto ahï¿½ y corta la funciï¿½n
             if (slots[i].itemGuardado == null)
             {
                 slots[i].SetupSlot(item);
@@ -71,8 +76,8 @@ public class InventoryManager : MonoBehaviour
             }
         }
 
-        // Si el bucle termina y no encontró vacíos, el inventario está lleno
-        Debug.LogWarning("El inventario está lleno.");
+        // Si el bucle termina y no encontrï¿½ vacï¿½os, el inventario estï¿½ lleno
+        Debug.LogWarning("El inventario estï¿½ lleno.");
         return false;
     }
 
@@ -81,7 +86,7 @@ public class InventoryManager : MonoBehaviour
     {
         System.Collections.Generic.List<ItemData> itemsSobrevivientes = new System.Collections.Generic.List<ItemData>();
 
-        // Guardar todos los ítems que aún existen en la lista temporal
+        // Guardar todos los ï¿½tems que aï¿½n existen en la lista temporal
         foreach (InventorySlot slot in slots)
         {
             if (slot.itemGuardado != null)
@@ -91,14 +96,14 @@ public class InventoryManager : MonoBehaviour
             }
         }
 
-        // Vuelve a colocarlos en orden desde el índice 0
+        // Vuelve a colocarlos en orden desde el ï¿½ndice 0
         for (int i = 0; i < itemsSobrevivientes.Count; i++)
         {
             slots[i].SetupSlot(itemsSobrevivientes[i]);
         }
     }
 
-    // Funciones para manejar el arrastre del ícono del objeto
+    // Funciones para manejar el arrastre del ï¿½cono del objeto
     public void IniciarArrastre(Sprite sprite)
     {
         iconoArrastre.sprite = sprite;
@@ -121,7 +126,7 @@ public class InventoryManager : MonoBehaviour
         textoNombre.text = item.nombreObjeto;
         textoDescripcion.text = item.descripcionObjeto;
 
-        // Posiciona el papel cerca del ratón usando el offset para que el cursor no lo tape
+        // Posiciona el papel cerca del ratï¿½n usando el offset para que el cursor no lo tape
         panelTooltip.transform.position = posicionMouse + offsetTooltip;
         panelTooltip.SetActive(true);
     }
