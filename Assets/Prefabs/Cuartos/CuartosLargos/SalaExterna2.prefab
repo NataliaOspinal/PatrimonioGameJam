@@ -390,7 +390,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::RoomData
   walkableArea: {fileID: 464802746472467119}
   cameraBounds: {fileID: 7288488445058638889}
-  tamanoCamara: 5
+  tamanoCamara: 7
 --- !u!1 &7330868723287384546
 GameObject:
   m_ObjectHideFlags: 0
