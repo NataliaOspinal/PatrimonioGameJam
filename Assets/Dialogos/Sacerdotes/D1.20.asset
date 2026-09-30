@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e955c488978417944ab9ff8b48ca9233, type: 3}
+  m_Name: D1.20
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueNode
+  hablante: 6
+  fuenteEspecial: {fileID: 0}
+  textoNPC: "\xBFNecesitabas algo?"
+  siguienteNodoLineal: {fileID: 0}
+  opciones:
+  - textoJugador: "1. \xBFLos jesuitas?"
+    siguienteNodo: {fileID: 11400000, guid: c45704bc8d14ab7428b144bb8180f2cf, type: 2}
+  - textoJugador: "2. \xBFPor qu\xE9 discuten?"
+    siguienteNodo: {fileID: 11400000, guid: 508035516fb08394f910f588cb4dbdc0, type: 2}
+  - textoJugador: 3. No quisiera interrumpir (Irse)
+    siguienteNodo: {fileID: 11400000, guid: 79f51df95d2d2b546b42c5856a2bc493, type: 2}

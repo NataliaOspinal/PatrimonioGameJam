@@ -135,6 +135,14 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: 0.9226409
       objectReference: {fileID: 0}
+    - target: {fileID: 1852460528351404674, guid: 4466e0bc1b2f25e44ab0242f1849b658, type: 3}
+      propertyPath: nodoDialogoHablar
+      value: 
+      objectReference: {fileID: 11400000, guid: 2240f4bab5c0a4e45a7348d8b2916448, type: 2}
+    - target: {fileID: 1952669193017721538, guid: 4466e0bc1b2f25e44ab0242f1849b658, type: 3}
+      propertyPath: nodoDialogoHablar
+      value: 
+      objectReference: {fileID: 11400000, guid: 2240f4bab5c0a4e45a7348d8b2916448, type: 2}
     - target: {fileID: 3878756477599505753, guid: 4466e0bc1b2f25e44ab0242f1849b658, type: 3}
       propertyPath: m_Name
       value: SalaExterna3
@@ -144,8 +152,12 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4616822067619064945, guid: 4466e0bc1b2f25e44ab0242f1849b658, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.76035655
+      objectReference: {fileID: 0}
+    - target: {fileID: 4616822067619064945, guid: 4466e0bc1b2f25e44ab0242f1849b658, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.61358684
+      value: -0.6495059
       objectReference: {fileID: 0}
     - target: {fileID: 5165417498084226816, guid: 4466e0bc1b2f25e44ab0242f1849b658, type: 3}
       propertyPath: m_LocalPosition.x

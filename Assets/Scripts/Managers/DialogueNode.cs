@@ -8,7 +8,9 @@ public enum PersonajeHablando
     Martin, 
     Francisco,
     Mariana,
-    Apostador
+    Apostador,
+    Franciscano,
+    Dominico
 }
 
 // se puede crear los nodos con click derecho en una carpeta 

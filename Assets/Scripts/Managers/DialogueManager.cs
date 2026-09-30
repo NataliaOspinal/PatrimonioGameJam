@@ -35,6 +35,8 @@ public class DialogueManager : MonoBehaviour
     //Click manager 
     public ClickManager clickManager;
 
+    private AnimadorNPC npcHablandoActualmente;
+
     void Start()
     {
         
@@ -65,6 +67,13 @@ public class DialogueManager : MonoBehaviour
 
     private void MostrarNodo(DialogueNode nodo)
     {
+
+        if (npcHablandoActualmente != null)
+        {
+            npcHablandoActualmente.CambiarEstadoHablar(false);
+            npcHablandoActualmente = null; // Lo soltamos
+        }
+        
         if (nodo.fuenteEspecial != null)
         {
             textoDisplayNPC.font = nodo.fuenteEspecial;
@@ -74,6 +83,21 @@ public class DialogueManager : MonoBehaviour
             if (fuentePorDefecto != null)
             {
                 textoDisplayNPC.font = fuentePorDefecto;
+            }
+        }
+
+        if (nodo.hablante != PersonajeHablando.Ninguno) // Asumiendo que "Ninguno" es tu opción vacía
+        {
+            AnimadorNPC[] todosLosNpcs = FindObjectsByType<AnimadorNPC>(FindObjectsSortMode.None);
+            
+            foreach (AnimadorNPC npc in todosLosNpcs)
+            {
+                if (npc.miPersonaje == nodo.hablante)
+                {
+                    npcHablandoActualmente = npc; // Lo guardamos
+                    npcHablandoActualmente.CambiarEstadoHablar(true); // ¡Inicia la animación!
+                    break; // Dejamos de buscar porque ya lo encontramos
+                }
             }
         }
 
@@ -189,6 +213,12 @@ public class DialogueManager : MonoBehaviour
 
     private void TerminarDialogo()
     {
+        if (npcHablandoActualmente != null)
+        {
+            npcHablandoActualmente.CambiarEstadoHablar(false);
+            npcHablandoActualmente = null;
+        }
+        
         AlCambiarHablante?.Invoke(PersonajeHablando.Ninguno);
         panelDialogo.SetActive(false);
         if (clickManager != null) clickManager.enabled = true;
