@@ -12,6 +12,8 @@ public class ItemInteractuar : MonoBehaviour
     public ObjectiveManager objectiveManager;
     public InteriorBaul pantallaBaul;
     public GameObject panelCartaVista;
+    public UnityEngine.UI.Image pantallaNegraFinal;
+    public float tiempoFadeFinal = 2f;
 
     public ItemData prefabHelado;
     private bool yaRecibioHelado = false;
@@ -124,6 +126,11 @@ public class ItemInteractuar : MonoBehaviour
                     StartCoroutine(RutinaHablarHeladero(item));
                     break;
                 }
+                if (item.idItem == "Tomas")
+                {
+                    StartCoroutine(RutinaHablarTomas(item));
+                    break;
+                }
                 if (item.nodoDialogoHablar != null)
                 {
                     dialogueManager.IniciarDialogo(item.nodoDialogoHablar);
@@ -216,5 +223,38 @@ public class ItemInteractuar : MonoBehaviour
             indiceRespuesta++;
             if (indiceRespuesta >= respuestasGenericas.Length) indiceRespuesta = 0;
         }
+    }
+    private IEnumerator RutinaHablarTomas(ItemData npcTomas)
+    {
+        if (npcTomas.nodoDialogoHablar != null)
+        {
+            dialogueManager.IniciarDialogo(npcTomas.nodoDialogoHablar);
+        }
+
+        yield return new WaitForSeconds(0.1f);
+        yield return new WaitUntil(() => clickManager.enabled == true);
+
+        clickManager.enabled = false;
+
+        if (pantallaNegraFinal != null)
+        {
+            pantallaNegraFinal.gameObject.SetActive(true);
+            pantallaNegraFinal.raycastTarget = true;
+
+            float tiempo = 0;
+            Color colorInicial = pantallaNegraFinal.color;
+            Color colorFinal = new Color(0, 0, 0, 1); // Negro sólido
+
+            while (tiempo < tiempoFadeFinal)
+            {
+                tiempo += Time.deltaTime;
+                pantallaNegraFinal.color = Color.Lerp(colorInicial, colorFinal, tiempo / tiempoFadeFinal);
+                yield return null;
+            }
+        }
+
+        yield return new WaitForSeconds(0.5f);
+
+        UnityEngine.SceneManagement.SceneManager.LoadScene("99_Credits");
     }
 }
