@@ -10,10 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e955c488978417944ab9ff8b48ca9233, type: 3}
-  m_Name: heladeroH4
+  m_Name: Gallero2
   m_EditorClassIdentifier: Assembly-CSharp::DialogueNode
   hablante: 0
   fuenteEspecial: {fileID: 0}
-  textoNPC: "Andaba por aqu\xED hace un momento."
-  siguienteNodoLineal: {fileID: 11400000, guid: 1d73488ae4fad0f4fa260c482277a5bf, type: 2}
+  textoNPC: "\xA1Ah! Hasta que llegas\u2026 Lamento lo de tu abuela, ella te quer\xEDa
+    un mont\xF3n. Pero s\xED, ya era hora de conocerte."
+  siguienteNodoLineal: {fileID: 11400000, guid: dcf77a24082ce6147a7df580b7b5dafa, type: 2}
   opciones: []

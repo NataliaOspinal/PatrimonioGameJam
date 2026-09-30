@@ -15,5 +15,5 @@ MonoBehaviour:
   hablante: 0
   fuenteEspecial: {fileID: 0}
   textoNPC: "Y dej\xF3 esto pagado antes de marcharse."
-  siguienteNodoLineal: {fileID: 0}
+  siguienteNodoLineal: {fileID: 11400000, guid: bbd771ed75b597643a1d36f609da9da4, type: 2}
   opciones: []

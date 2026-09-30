@@ -17,5 +17,5 @@ MonoBehaviour:
   textoNPC: "Los gallos pudieron m\xE1s, o tal vez\u2026 era para usted\u2026\r\nSi
     da con \xE9l, h\xE1game el favor de entreg\xE1rselo antes de que se deshaga,
     o puede com\xE9rselo. Yo me las arreglo con \xE9l luego."
-  siguienteNodoLineal: {fileID: 0}
+  siguienteNodoLineal: {fileID: 11400000, guid: 5758063caffea2f459ab39b44c7e6f12, type: 2}
   opciones: []

@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e955c488978417944ab9ff8b48ca9233, type: 3}
-  m_Name: heladeroH4
+  m_Name: Gallero14
   m_EditorClassIdentifier: Assembly-CSharp::DialogueNode
   hablante: 0
   fuenteEspecial: {fileID: 0}
-  textoNPC: "Andaba por aqu\xED hace un momento."
-  siguienteNodoLineal: {fileID: 11400000, guid: 1d73488ae4fad0f4fa260c482277a5bf, type: 2}
+  textoNPC: Sobre lo que recordaba de ellas. Antes dime una cosa, muchacho.
+  siguienteNodoLineal: {fileID: 11400000, guid: b4403e887d2bf014196a13b52d2d1591, type: 2}
   opciones: []
