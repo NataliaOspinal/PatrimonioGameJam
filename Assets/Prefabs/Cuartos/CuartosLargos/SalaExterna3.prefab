@@ -567,8 +567,6 @@ MonoBehaviour:
   walkableArea: {fileID: 464802746472467119}
   cameraBounds: {fileID: 7288488445058638889}
   tamanoCamara: 5
-<<<<<<< Updated upstream
-=======
 --- !u!1 &7298889005366775991
 GameObject:
   m_ObjectHideFlags: 0
@@ -600,7 +598,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4036072750078128902}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
->>>>>>> Stashed changes
 --- !u!1 &7330868723287384546
 GameObject:
   m_ObjectHideFlags: 0
