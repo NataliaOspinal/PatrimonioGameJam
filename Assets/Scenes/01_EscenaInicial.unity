@@ -636,7 +636,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6370664887471992214, guid: 44818d3e06aa8ca438eb9230852b70b5, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7732218908432136970, guid: 44818d3e06aa8ca438eb9230852b70b5, type: 3}
       propertyPath: m_SortingOrder
@@ -3517,6 +3517,10 @@ PrefabInstance:
     - target: {fileID: 2590219328744403896, guid: 80e661f49d6756348b68b5d99d528af7, type: 3}
       propertyPath: m_Name
       value: Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 2590219328744403896, guid: 80e661f49d6756348b68b5d99d528af7, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6199298876036811842, guid: 80e661f49d6756348b68b5d99d528af7, type: 3}
       propertyPath: m_Pivot.x
