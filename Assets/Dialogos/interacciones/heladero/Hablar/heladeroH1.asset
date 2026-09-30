@@ -15,5 +15,5 @@ MonoBehaviour:
   hablante: 1
   fuenteEspecial: {fileID: 0}
   textoNPC: "Buenas tardes. \xBFConoce usted a don Tom\xE1s Valverde? "
-  siguienteNodoLineal: {fileID: 0}
+  siguienteNodoLineal: {fileID: 11400000, guid: 5d305ff43472e9547a1313ed744c58f2, type: 2}
   opciones: []

@@ -13,6 +13,9 @@ public class ItemInteractuar : MonoBehaviour
     public InteriorBaul pantallaBaul;
     public GameObject panelCartaVista;
 
+    public ItemData prefabHelado;
+    private bool yaRecibioHelado = false;
+
     [Header("Conexión con Cinemáticas")]
     public GameObject cinematica2;
 
@@ -116,6 +119,11 @@ public class ItemInteractuar : MonoBehaviour
                 break;
 
             case "Hablar":
+                if (item.idItem == "Heladero" && !yaRecibioHelado)
+                {
+                    StartCoroutine(RutinaHablarHeladero(item));
+                    break;
+                }
                 if (item.nodoDialogoHablar != null)
                 {
                     dialogueManager.IniciarDialogo(item.nodoDialogoHablar);
@@ -135,6 +143,30 @@ public class ItemInteractuar : MonoBehaviour
     public void UsarItemConItem(InventorySlot slotUsado, ItemData itemDestino)
     {
         StartCoroutine(RutinaUsarItem(slotUsado, itemDestino));
+    }
+
+    private IEnumerator RutinaHablarHeladero(ItemData npcHeladero)
+    {
+        if (npcHeladero.nodoDialogoHablar != null)
+        {
+            dialogueManager.IniciarDialogo(npcHeladero.nodoDialogoHablar);
+        }
+
+        yield return new WaitForSeconds(0.1f);
+        yield return new WaitUntil(() => clickManager.enabled == true);
+
+        // Entregamos el helado
+        if (inventoryManager != null && prefabHelado != null)
+        {
+            inventoryManager.AgregarItem(prefabHelado);
+        }
+
+        // Actualizamos la misión
+        if (objectiveManager != null)
+        {
+            objectiveManager.CambiarObjetivoSecuencial("Habla con Don Tomás Valverde.");
+        }
+        yaRecibioHelado = true;
     }
 
     private IEnumerator RutinaUsarItem(InventorySlot slotUsado, ItemData itemDestino)

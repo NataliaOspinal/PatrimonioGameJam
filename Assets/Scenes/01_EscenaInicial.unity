@@ -2740,6 +2740,7 @@ MonoBehaviour:
   objectiveManager: {fileID: 786357984}
   pantallaBaul: {fileID: 971918593}
   panelCartaVista: {fileID: 2077219933}
+  prefabHelado: {fileID: 1422627680143597961, guid: e2ad2d3eef1a69445b61591234675fb3, type: 3}
   cinematica2: {fileID: 932500444}
 --- !u!4 &1652012159
 Transform:

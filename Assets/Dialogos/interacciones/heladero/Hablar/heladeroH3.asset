@@ -15,5 +15,5 @@ MonoBehaviour:
   hablante: 1
   fuenteEspecial: {fileID: 0}
   textoNPC: "\xA1Por fin alguien lo conoce!"
-  siguienteNodoLineal: {fileID: 0}
+  siguienteNodoLineal: {fileID: 11400000, guid: 7dda17052d06e784ea941a7d6041e66b, type: 2}
   opciones: []

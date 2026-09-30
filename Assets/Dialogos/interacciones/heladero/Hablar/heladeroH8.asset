@@ -15,5 +15,5 @@ MonoBehaviour:
   hablante: 1
   fuenteEspecial: {fileID: 0}
   textoNPC: "Con gusto. Aunque a\xFAn no s\xE9 c\xF3mo reconocerlo."
-  siguienteNodoLineal: {fileID: 0}
+  siguienteNodoLineal: {fileID: 11400000, guid: d1d68c2d2669aad40a41519d7cc00615, type: 2}
   opciones: []

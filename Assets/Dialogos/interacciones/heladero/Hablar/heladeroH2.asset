@@ -15,5 +15,5 @@ MonoBehaviour:
   hablante: 0
   fuenteEspecial: {fileID: 0}
   textoNPC: Claro que lo conozco.
-  siguienteNodoLineal: {fileID: 0}
+  siguienteNodoLineal: {fileID: 11400000, guid: 5c3d6ced2752b5f4f9f06390cd331a30, type: 2}
   opciones: []

@@ -15,5 +15,5 @@ MonoBehaviour:
   hablante: 1
   fuenteEspecial: {fileID: 0}
   textoNPC: "\xBFSin llev\xE1rselo?"
-  siguienteNodoLineal: {fileID: 0}
+  siguienteNodoLineal: {fileID: 11400000, guid: 6c95b39f81ed7c94385c421bb95a9cc4, type: 2}
   opciones: []
